@@ -19,6 +19,7 @@ import DateofBirthForm from './components/DateofBirthForm';
 import SSNForm from './components/SSNForm';
 import SignatureForm from './components/SignatureForm';
 import BusinessBankStatementsForm from './components/BusinessBankStatementsForm';
+import NeoPopTiltedButton from './components/buttons/NeoPopTiltedButton';
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -60,7 +61,7 @@ const App: React.FC = () => {
         <button onClick={previousStep}>Previous</button>
       )}
       {currentStep < forms.length - 1 && (
-        <button onClick={nextStep}>Next</button>
+        <NeoPopTiltedButton onClick={nextStep}>Next Screen →</NeoPopTiltedButton>
       )}
     </div>
   );

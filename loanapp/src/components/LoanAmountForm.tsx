@@ -15,9 +15,6 @@ const LoanAmountForm: React.FC = () => {
         />
         <i className="dollar-okz">$</i>
         <span className="error-5nq"></span>
-        <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
-          Next
-        </button>
       </div>
       <div className="dis-gsb"></div>
     </div>

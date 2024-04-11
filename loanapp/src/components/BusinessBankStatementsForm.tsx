@@ -91,9 +91,6 @@ const BusinessBankStatementsForm: React.FC = () => {
                   <div className="text-6kp">Verified data integrity</div>
                 </div>
               </div>
-              <div className="wrapper-nns">
-                <button type="button">Next</button>
-              </div>
             </div>
             <ul className="list-w61"></ul>
           </section>
@@ -143,9 +140,6 @@ const BusinessBankStatementsForm: React.FC = () => {
                   </div>
                   <div className="text-6kp">Verified data integrity</div>
                 </div>
-              </div>
-              <div className="wrapper-nns">
-                <button type="button">Next</button>
               </div>
             </div>
             <ul className="list-w61"></ul>

@@ -15,9 +15,7 @@ const AnnualRevenueForm: React.FC = () => {
         />
         <i className="dollar-tvy">$</i>
         <span className="error-p9f"></span>
-        <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
-          Next
-        </button>
+   
       </div>
       <div className="dis-9w8"></div>
     </div>

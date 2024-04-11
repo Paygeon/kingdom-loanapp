@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffffff;
 }
 
 @keyframes App-logo-spin {
@@ -57,7 +57,7 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Serif+Display:400,400i&display=swap'); 
 @import url('https://fonts.googleapis.com/css?family=Yellowtail:400&display=swap'); 
 html { 
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(0, 0, 0);
 } 
 
 body { 
@@ -92,9 +92,6 @@ body {
     display: none;
 } 
 
-.button-9xs { 
-    padding: 1rem;
-} 
 
 .form-gd3 { 
     padding: 1rem;
@@ -198,7 +195,7 @@ aside {
     border: 0; 
     border-radius: 16px; 
     font-family: CircularStd, sans-serif; 
-    color: rgb(26, 39, 99); 
+    color: white; 
     max-width: 392px; 
     height: 100px; 
     padding: 15px;
@@ -223,7 +220,7 @@ h2 {
     font-weight: 400; 
     font-size: 1.875rem; 
     line-height: 2.25rem; 
-    color: rgb(26, 39, 99);
+    color: rgb(255, 255, 255);
 } 
 
 @media screen and (min-width: 601px){ 
@@ -233,42 +230,11 @@ h2 {
   } 
 }     
 
-button { 
-    margin: 20px auto; 
-    background-color: rgb(204, 245, 225); 
-    border: 0; 
-    border-radius: 16px; 
-    cursor: pointer; 
-    font-family: CircularStd, sans-serif; 
-    font-size: 21px; 
-    font-stretch: 100%; 
-    font-style: normal; 
-    color: rgb(26, 39, 99); 
-    display: block; 
-    width: 100%; 
-    height: 72px; 
-    line-height: 32px; 
-    max-width: 600px; 
-    text-align: center;
-} 
 
-.button-9xs button  { 
-    background-color: rgb(250, 251, 252); 
-    border: 2px solid rgb(209, 212, 224); 
-    color: rgb(26, 39, 99); 
-    margin: 16px auto;
-} 
 
-button:hover { 
-    background-color: rgb(5, 206, 106); 
-    color: rgb(249, 250, 251);
-} 
 
-.button-9xs button:hover { 
-    background-color: rgb(205, 245, 226); 
-    border: 2px solid rgb(5, 205, 106); 
-    color: rgb(26, 39, 99);
-} 
+
+
 
 .wrapper-nns { 
     width: 100%; 
@@ -292,11 +258,7 @@ div.dis-fzm {
     display: flex;
 } 
 
-button:disabled { 
-    background-color: rgb(209, 213, 219); 
-    color: rgb(243, 244, 246); 
-    cursor: not-allowed;
-} 
+
 
 .container-d15 { 
     padding: 1rem;
@@ -313,7 +275,7 @@ button:disabled {
     justify-content: space-evenly; 
     flex-direction: column; 
     padding: 0px 35px 15px 45; 
-    color: rgb(0, 47, 104); 
+    color: white; 
     font-size: 15px; 
     font-style: bold; 
     font-family: 'CircularStd', sans-serif; 
@@ -332,7 +294,7 @@ button:disabled {
     justify-content: center; 
     align-items: center; 
     padding: 0px 5px 15px 35px; 
-    color: rgb(0, 47, 104); 
+    color: white; 
     font-size: 12px; 
     font-style: italic; 
     font-family: 'CircularStd', sans-serif;
@@ -367,13 +329,13 @@ label {
     height: auto; 
     letter-spacing: 0.6px; 
     line-height: 16px; 
-    color: rgb(26, 39, 99); 
+    color: white; 
     text-align: left; 
     padding-bottom: 3px;
 } 
 
 input[type="text"] { 
-    color: rgb(26, 39, 99); 
+    color: white; 
     border-radius: 16px; 
     cursor: text; 
     display: inline-block; 
@@ -395,7 +357,7 @@ input[type="text"] {
 
 .form-gd3 .dollar-lo5  { 
     position: relative; 
-    color: rgb(26, 39, 99); 
+    color: white; 
     top: -21px; 
     left: 15px; 
     display: block; 
@@ -434,7 +396,7 @@ div.dis-fzm ul  {
 } 
 
 input[type="email"] { 
-    color: rgb(26, 39, 99); 
+    color: white; 
     border-radius: 16px; 
     cursor: text; 
     display: inline-block; 
@@ -467,7 +429,7 @@ input[type="email"] {
 
 a.signature-623.foc-2gn { 
     border-bottom-width: 2px; 
-    border-color: rgb(5, 206, 106);
+    border-color: rgb(206, 206, 5);
 } 
 
 a.signature-623:hover { 
@@ -524,7 +486,7 @@ section.container-d15 {
     border-radius: 16px; 
     width: 100%; 
     height: 72px; 
-    color: rgb(26, 39, 99); 
+    color: white; 
     background-color: rgb(246, 246, 249); 
     font-family: CircularStd, sans-serif; 
     font-size: 21px; 
@@ -544,7 +506,7 @@ section.container-d15 {
     top: -16px; 
     font-size: 25px; 
     position: relative; 
-    color: rgb(26, 39, 99); 
+    color: rgb(255, 255, 255); 
     pointer-events: none;
 } 
 
@@ -622,18 +584,18 @@ select option:checked  {
 } 
 
 .box-o67 .sug-71c .val-r9d  { 
-    color: rgb(26, 39, 99); 
+    color: white; 
     font-size: 1.125rem;
 } 
 
-.box-o67 .con-so4 button  { 
+.box-o67 .con-so4   { 
     border-radius: 0.75rem; 
     height: 3.5rem; 
     font-size: 1rem; 
     margin-top: 1rem;
 } 
 
-button.war-29x { 
+.war-29x { 
     margin: 20px auto; 
     background-color: rgb(245, 204, 204); 
     border: 0; 
@@ -643,7 +605,7 @@ button.war-29x {
     font-size: 21px; 
     font-stretch: 100%; 
     font-style: normal; 
-    color: rgb(26, 39, 99); 
+    color: white; 
     display: block; 
     width: 100%; 
     height: 72px; 
@@ -652,7 +614,7 @@ button.war-29x {
     text-align: center;
 } 
 
-button.war-29x:hover { 
+.war-29x:hover { 
     background-color: rgb(206, 5, 5); 
     color: rgb(249, 250, 251);
 } 
@@ -661,14 +623,14 @@ button.war-29x:hover {
     height: 20px;
 } 
 
-button.info-vec { 
+.info-vec { 
     display: flex; 
     justify-content: center; 
     align-items: center; 
     background-color: #84e2f7;
 } 
 
-button.info-vec:hover:enabled { 
+.info-vec:hover:enabled { 
     background-color: #02CDEF;
 } 
 
@@ -695,7 +657,7 @@ button.info-vec:hover:enabled {
 } 
 
 input[type="number"] { 
-    color: rgb(26, 39, 99); 
+    color: white; 
     border-radius: 16px; 
     cursor: text; 
     display: inline-block; 
@@ -711,20 +673,15 @@ input[type="number"] {
     padding: 0;
 } 
 
-.button-qws { 
+.-qws { 
     background-color: rgb(249, 250, 251); 
     border: 1px solid rgb(232, 233, 239); 
     margin-top: 0;
 } 
 
-.button-orh { 
-    background-color: rgb(5, 206, 106); 
-    color: rgb(249, 250, 251); 
-    border: 0;
-} 
 
-.button-qws:hover { 
-    background-color: rgb(5, 206, 106); 
+.-qws:hover { 
+    background-color: rgb(0, 0, 0); 
     color: rgb(249, 250, 251); 
     border: 0;
 } 
@@ -2109,7 +2066,7 @@ input[type="number"] {
 }  
 .dollar-okz  { 
   position: relative; 
-  color: rgb(26, 39, 99); 
+  color: rgb(255, 255, 255); 
   top: -21px; 
   left: 15px; 
   display: block; 
@@ -2129,22 +2086,18 @@ input[type="number"] {
   margin: 10px 5px;
 } 
 
-.forms-button-options-node button { 
+.forms--options-node  { 
   background-color: rgb(250, 251, 252); 
   border: 2px solid rgb(209, 212, 224); 
-  color: rgb(26, 39, 99); 
+  color: rgb(255, 255, 255); 
   margin: 16px auto;
 } 
 
-button:hover { 
-  background-color: rgb(5, 206, 106); 
-  color: rgb(249, 250, 251);
-} 
 
-.forms-button-options-node button:hover { 
+.forms--options-node :hover { 
   background-color: rgb(205, 245, 226); 
-  border: 2px solid rgb(5, 205, 106); 
-  color: rgb(26, 39, 99);
+  border: 2px solid rgb(205, 205, 5); 
+  color: rgb(255, 255, 255);
 } 
 
 .wrapper-z13 { 
@@ -2182,7 +2135,7 @@ button:hover {
   border-radius: 16px; 
   width: 100%; 
   height: 72px; 
-  color: rgb(26, 39, 99); 
+  color: rgb(255, 255, 255); 
   background-color: rgb(246, 246, 249); 
   font-family: CircularStd, sans-serif; 
   font-size: 21px; 
@@ -2207,7 +2160,7 @@ select  {
   top: -16px; 
   font-size: 25px; 
   position: relative; 
-  color: rgb(26, 39, 99); 
+  color: rgb(255, 255, 255); 
   pointer-events: none;
 } 
 
@@ -2219,22 +2172,18 @@ select option:checked  {
   border-color: green;
 } 
 
-.forms-button-options-node button { 
+.forms--options-node  { 
   background-color: rgb(250, 251, 252); 
   border: 2px solid rgb(209, 212, 224); 
-  color: rgb(26, 39, 99); 
+  color: white; 
   margin: 16px auto;
 } 
 
-button:hover { 
-  background-color: rgb(5, 206, 106); 
-  color: rgb(249, 250, 251);
-} 
 
-.forms-button-options-node button:hover { 
+.forms--options-node :hover { 
   background-color: rgb(205, 245, 226); 
-  border: 2px solid rgb(5, 205, 106); 
-  color: rgb(26, 39, 99);
+  border: 2px solid rgb(205, 168, 5); 
+  color: white;
 } 
 
 .wrapper-bv7 { 
@@ -2252,7 +2201,7 @@ label {
   height: auto; 
   letter-spacing: 0.6px; 
   line-height: 16px; 
-  color: rgb(26, 39, 99); 
+  color: white; 
   text-align: left; 
   padding-bottom: 3px;
 } 
@@ -2297,7 +2246,7 @@ input {
 } 
 
 input[type="text"] { 
-  color: rgb(26, 39, 99); 
+  color: white; 
   border-radius: 16px; 
   cursor: text; 
   display: inline-block; 
@@ -2340,7 +2289,7 @@ label {
   height: auto; 
   letter-spacing: 0.6px; 
   line-height: 16px; 
-  color: rgb(26, 39, 99); 
+  color: white; 
   text-align: left; 
   padding-bottom: 3px;
 } 
@@ -2350,7 +2299,7 @@ input {
 } 
 
 input[type="text"] { 
-  color: rgb(26, 39, 99); 
+  color: white; 
   border-radius: 16px; 
   cursor: text; 
   display: inline-block; 
@@ -2365,3 +2314,10 @@ input[type="text"] {
   text-align: center; 
   padding: 0;
 } 
+
+.dis-gpo {
+    color: white
+}
+.dis-y6i {
+    color: white
+}

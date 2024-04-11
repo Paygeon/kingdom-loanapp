@@ -27,10 +27,10 @@ const BusinessTaxIDForm: React.FC = () => {
         />
         <span className="error-3k7"></span>
         <button type="button" onClick={handleSubmit} className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
-          Next
+          
         </button>
-        <div>
-          If you're a sole proprietor and your SSN is your TaxID, please select the next button.
+        <div className="dis-y6i">
+          If you're a sole proprietor and your SSN is your TaxID, please select the  button.
         </div>
       </div>
     </div>

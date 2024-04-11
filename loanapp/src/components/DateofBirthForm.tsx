@@ -64,9 +64,6 @@ const DateOfBirthForm: React.FC = () => {
           </div>
         </div>
         <span className="error-jsj"></span>
-        <button type="button" onClick={handleSubmit} className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
-          Next
-        </button>
       </div>
     </div>
   );

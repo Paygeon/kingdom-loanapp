@@ -14,13 +14,11 @@ const ContactForm: React.FC = () => {
           className="border border-gray-400 rounded-md p-2"
         />
         <span className="error-hez"></span>
-        <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded-md mt-4">
-          Next
-        </button>
+
       </div>
       <div className="dis-gpo mt-4">
         <p>
-          By clicking on the "Next" button above, I consent, acknowledge, and agree to the following:
+          By clicking on the "" button above, I consent, acknowledge, and agree to the following:
         </p>
         <ul>
           <li>
