@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../context/DataContext';
+import Navigator from './shared/Navigator';
 
 const BusinessNameForm: React.FC = () => {
+  const {businessName,setBusinessName} = useContext(DataContext)
+  const verifyForm= ()=>{
+    if(!businessName){
+      return {
+        isValid:false,
+        message:"please add business name",
+      }
+    }
+    if(businessName.trim().length < 3){
+      return{
+        isValid:false,
+        message:"your business name should atleast be 3 characters long"
+      }
+    }
+    return {
+      isValid:true,
+      message:null
+    }
+  }
   return (
+    <>
     <div className="form-9mr vis-bi7">
       <h2>What is your business name?</h2>
       <div className="wrapper-ehd">
         <label htmlFor="businessName">Business Name</label>
         <input
           type="text"
+          value={businessName}
+          style={{color:"black"}}
+          onChange={e=>setBusinessName(e.target.value)}
           id="businessName"
           name="What is your business name?"
           placeholder="Acme, Inc"
@@ -29,6 +54,8 @@ const BusinessNameForm: React.FC = () => {
         </div>
       </div>
     </div>
+    <Navigator verifyForm={verifyForm}/>
+    </>
   );
 };
 

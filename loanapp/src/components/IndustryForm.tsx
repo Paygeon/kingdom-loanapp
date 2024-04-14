@@ -1,37 +1,61 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../context/DataContext';
+import Navigator from './shared/Navigator';
+
+const industryOptions = [
+  {value:"accommodation_food_services",label:"Accommodation and Food Services"},
+  {value:"admin_support_waste_remediation",label:"Administrative & Support and Waste Management & Remediation Services"},
+  {value:"agriculture_forestry",label:"Agriculture, Forestry, Fishing and Hunting"},
+  {value:"arts_entertainment",label:"Arts, Entertainment, and Recreation"},
+  {value:"construction",label:"Construction"},
+  {value:"education",label:"Educational Services"},
+  {value:"finance_insurance",label:"Finance and Insurance"},
+  {value:"healthcare_social",label:"Health Care and Social Assistance"},
+  {value:"information",label:"Information"},
+  {value:"management_companies",label:"Management of Companies and Enterprises"},
+  {value:"manufacturing",label:"Manufacturing"},
+  {value:"mining",label:"Mining"},
+  {value:"other",label:"Other Services (except Public Administration)"},
+  {value:"science_tech",label:"Professional, Scientific, and Technical Services"},
+  {value:"public_admin",label:"Public Administration"},
+  {value:"real_estate",label:"Real Estate Rental and Leasing"},
+  {value:"retail_trade",label:"Retail Trade"},
+  {value:"transport_warehousing",label:"Transportation and Warehousing"},
+  {value:"utilities",label:"Utilities"},
+  {value:"wholesale_trade",label:"Wholesale"},
+]
 
 const IndustryForm: React.FC = () => {
+  const {industry,setIndustry} = useContext(DataContext)
+  const verifyForm= ()=>{
+    if(!industry){
+      return {
+        isValid:false,
+        message:"please add industry",
+      }
+    }
+    return {
+      isValid:true,
+      message:null
+    }
+  }
   return (
+    <>
     <div className="form-5c5 vis-v6c">
       <h2>What industry are you in?</h2>
       <div className="wrapper-gfs">
         <div className="wrapper-33b relative">
           <select
             id="industry"
+            value={industry}
+            onChange={e=>setIndustry(e.target.value)}
             name="Industry"
             className="border border-gray-400 rounded-md p-2 appearance-none"
           >
             <option value="">Select One</option>
-            <option value="accommodation_food_services">Accommodation and Food Services</option>
-            <option value="admin_support_waste_remediation">Administrative & Support and Waste Management & Remediation Services</option>
-            <option value="agriculture_forestry">Agriculture, Forestry, Fishing and Hunting</option>
-            <option value="arts_entertainment">Arts, Entertainment, and Recreation</option>
-            <option value="construction">Construction</option>
-            <option value="education">Educational Services</option>
-            <option value="finance_insurance">Finance and Insurance</option>
-            <option value="healthcare_social">Health Care and Social Assistance</option>
-            <option value="information">Information</option>
-            <option value="management_companies">Management of Companies and Enterprises</option>
-            <option value="manufacturing">Manufacturing</option>
-            <option value="mining">Mining</option>
-            <option value="other">Other Services (except Public Administration)</option>
-            <option value="science_tech">Professional, Scientific, and Technical Services</option>
-            <option value="public_admin">Public Administration</option>
-            <option value="real_estate">Real Estate Rental and Leasing</option>
-            <option value="retail_trade">Retail Trade</option>
-            <option value="transport_warehousing">Transportation and Warehousing</option>
-            <option value="utilities">Utilities</option>
-            <option value="wholesale_trade">Wholesale</option>
+            {industryOptions.map(option=>(
+              <option value={option.value}>{option.label}</option>
+            ))}
           </select>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +74,9 @@ const IndustryForm: React.FC = () => {
         <span className="error-qg2"></span>
       </div>
     </div>
+    <Navigator verifyForm={verifyForm}/>
+    </>
+    
   );
 };
 

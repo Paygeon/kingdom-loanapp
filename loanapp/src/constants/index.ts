@@ -1,0 +1,76 @@
+interface PersonalDetails{
+    lastname: string,
+    firstname: string,
+}
+interface AddressInfo{
+    address: string,
+    apt:string,
+    isHomeAddress:boolean,
+    city:string,
+    state:string,
+    postalCode:string,
+}
+interface OwnershipDetails{
+        ownershipPercentage:number,
+        isAuthorizedOwner:boolean,
+}
+
+export const DataSchema = {
+        isLoading:false,
+        isSubmitted:false,
+        businessType:"",
+        currentStep:0,
+        setBusinessType:(value:string)=>{},
+        nextStep:()=>{},
+        previousStep:()=>{},
+        loanAmount:0,
+        setLoanAmount:(amount:number)=>{},
+        loanReason:"",
+        setLoanReason:(reason:string)=>{},
+        businessStartDate:new Date().toUTCString(),
+        setBusinessStartDate:(date:string)=>{},
+        annualRevenue:0,
+        setAnnualRevenue:(amount:number)=>{},
+        creditScore:"",
+        setCreditScore:(score:string)=>{},
+        industry:"",
+        setIndustry:(value:string)=>{},
+        businessZipCode:"",
+        setBusinessZipCode:(value:string)=>{},
+        businessName:"",
+        setBusinessName:(value:string)=>{},
+        personalDetails:{
+            firstname:"",
+            lastname:""
+        },
+        setPersonalDetails:(value:PersonalDetails)=>{},
+        businessTaxID:"",
+        setBusinessTaxID:(value:string)=>{},
+        signature:"",
+        setSignature:(value:string)=>{},
+        bankStatement:"",
+        setBankStatement:(value:string)=>{},
+        dateOfBirth:new Date().toUTCString(),
+        setDateOfBirth:(value:string)=>{},
+        phone:"",
+        setPhone:(value:string)=>{},
+        email:"",
+        setEmail:(value:string)=>{},
+        ownershipDetails:{
+            ownershipPercentage:0,
+            isAuthorizedOwner:false,
+        },
+        setOwnershipDetails:(value:OwnershipDetails)=>{},
+        ssn:"",
+        setSSN:(value:string)=>{},
+        addressInfo:{
+            address: "",
+            apt:"",
+            isHomeAddress:true,
+            city:"",
+            state:"",
+            postalCode:"",
+        },
+        setAddressInfo:(value:AddressInfo)=>{},
+        async submitData(){}
+}

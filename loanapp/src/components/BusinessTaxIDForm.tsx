@@ -1,17 +1,38 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../context/DataContext';
+import Navigator from './shared/Navigator';
 
 const BusinessTaxIDForm: React.FC = () => {
-  const [ein, setEIN] = useState<string>('');
+  const {businessTaxID,setBusinessTaxID} = useContext(DataContext)
 
   const handleEINChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEIN(event.target.value);
+    setBusinessTaxID(event.target.value);
   };
 
   const handleSubmit = () => {
     // Handle form submission
   };
+  const verifyForm= ()=>{
+    if(!businessTaxID){
+      return {
+        isValid:false,
+        message:"please add ssn number",
+      }
+    }
+    if(businessTaxID.trim().length < 3){
+      return{
+        isValid:false,
+        message:"your business tax ID should atleast be 3 characters long"
+      }
+    }
+    return {
+      isValid:true,
+      message:null
+    }
+  }
 
   return (
+    <>
     <div>
       <h2>What's your Business Tax ID (EIN)?</h2>
       <div className="wrapper-81z">
@@ -21,7 +42,8 @@ const BusinessTaxIDForm: React.FC = () => {
           id="ein"
           name="ein"
           placeholder="00-0000000"
-          value={ein}
+          value={businessTaxID}
+          style={{color:"black"}}
           onChange={handleEINChange}
           className="border border-gray-400 rounded-md p-2"
         />
@@ -34,6 +56,8 @@ const BusinessTaxIDForm: React.FC = () => {
         </div>
       </div>
     </div>
+    <Navigator verifyForm={verifyForm}/>
+    </>
   );
 };
 

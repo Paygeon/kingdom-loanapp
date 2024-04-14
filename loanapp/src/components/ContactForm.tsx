@@ -1,14 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DataContext } from '../context/DataContext';
+import Navigator from './shared/Navigator';
 
 const ContactForm: React.FC = () => {
+  const {phone,setPhone} = useContext(DataContext)
+  const verifyForm= ()=>{
+    if(!phone){
+      return {
+        isValid:false,
+        message:"please add your phone number",
+      }
+    }
+    if(phone.length < 6){
+      return{
+        isValid:false,
+        message:"your phone number should atleast be 6 digits long"
+      }
+    }
+    return {
+      isValid:true,
+      message:null
+    }
+  }
   return (
+  <>
     <div className="form-s2p vis-bt1">
       <h2>What's the best way to reach you?</h2>
       <div className="wrapper-7x6">
         <label htmlFor="phoneNumber">Phone Number</label>
         <input
-          type="text"
+          type="number"
           id="phoneNumber"
+          style={{color: "black"}}
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           name="What's the best way to reach you?"
           placeholder="(111) 222-3333"
           className="border border-gray-400 rounded-md p-2"
@@ -53,6 +78,8 @@ const ContactForm: React.FC = () => {
         </ul>
       </div>
     </div>
+    <Navigator verifyForm={verifyForm}/>
+  </>
   );
 };
 
