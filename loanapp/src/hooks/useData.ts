@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FirebaseService from "../services/FirebaseService";
+// import forms from "../constants/forms";
 
 interface AddressInfo{
     address: string,
@@ -13,7 +14,7 @@ interface AddressInfo{
 
 export default function useData(){
     const [isSubmitted,setIsSubmitted] = useState(false);
-    const [isAuthorizedOwner,setIsAuthorizedOwner] = useState(false);
+    const [isAuthorizedOwner,setIsAuthorizedOwner] = useState(true);
     const [isLoading,setLoading] = useState(false);
     const [currentStep, setCurrentStep] = useState(0);
     const [businessType,setBusinessType] = useState("");

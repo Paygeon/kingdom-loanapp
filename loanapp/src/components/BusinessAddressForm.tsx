@@ -55,7 +55,7 @@ const BusinessAddressForm: React.FC = () => {
   };
 
   const verifyForm= ()=>{
-    if(!(addressInfo.address && addressInfo.city && addressInfo.apt && addressInfo.postalCode && addressInfo.state)){
+    if(!(addressInfo.address && addressInfo.city && addressInfo.postalCode && addressInfo.state)){
       return {
         isValid:false,
         message:"Some fields are still missing please fill them out",
@@ -83,12 +83,6 @@ const BusinessAddressForm: React.FC = () => {
       return{
         isValid:false,
         message:"your city should atleast be 3 characters long"
-      }
-    } 
-    if(addressInfo.apt.trim().length < 3){
-      return{
-        isValid:false,
-        message:"your apt should atleast be 3 characters long"
       }
     }
     return {

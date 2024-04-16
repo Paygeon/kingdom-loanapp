@@ -3,15 +3,15 @@ import { DataContext } from '../context/DataContext';
 import Navigator from './shared/Navigator';
 
 const BusinessTaxIDForm: React.FC = () => {
-  const {businessTaxID,setBusinessTaxID,isAuthorizedOwner,setIsAuthorizedOwner} = useContext(DataContext)
+  const {businessTaxID,setBusinessTaxID} = useContext(DataContext)
 
   const handleEINChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBusinessTaxID(event.target.value);
   };
 
-  const handleAuthorizationClick = (isAuthorized: boolean) => {
-    setIsAuthorizedOwner(isAuthorized);
-  };
+  // const handleAuthorizationClick = (isAuthorized: boolean) => {
+  //   setIsAuthorizedOwner(isAuthorized);
+  // };
   const verifyForm= ()=>{
     if(!businessTaxID){
       return {
@@ -51,7 +51,7 @@ const BusinessTaxIDForm: React.FC = () => {
         <div className="dis-y6i my-3" style={{textAlign:"left"}}>
           If you're a sole proprietor and your SSN is your TaxID, please select the  button.
         </div>
-        <div style={{ display: 'flex',gap:"4px" }}>
+        {/* <div style={{ display: 'flex',gap:"4px" }}>
             <button
               className={`button-yvf p-4 rounded-md text-xl ${isAuthorizedOwner ? 'bg-yellow-500' : 'bg-white'}`}
               onClick={() => handleAuthorizationClick(true)}
@@ -66,7 +66,7 @@ const BusinessTaxIDForm: React.FC = () => {
               No
             </button>
             <input type="hidden" id="Ownership-manager" name="Ownership-manager" value={isAuthorizedOwner ? '1' : '0'} />
-          </div>
+          </div> */}
       </div>
     </div>
     <Navigator verifyForm={verifyForm}/>

@@ -1,28 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DataContext } from '../context/DataContext';
 import Navigator from './shared/Navigator';
 
 const OwnershipForm: React.FC = () => {
   const {setOwnershipDetails,ownershipDetails} = useContext(DataContext)
-  const [ownershipPercentage, setOwnershipPercentage] = useState<number>(0);
+  const [ownershipPercentage, setOwnershipPercentage] = useState<number>(ownershipDetails.ownershipPercentage);
   const [isAuthorizedOwner, setIsAuthorizedOwner] = useState<boolean>(true);
 
   const handleOwnershipPercentageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOwnershipPercentage(parseFloat(event.target.value));
+    setOwnershipDetails(
+      {
+        ownershipPercentage:parseFloat(event.target.value),
+        isAuthorizedOwner
+      }
+    )
   };
 
   const handleAuthorizationClick = (isAuthorized: boolean) => {
     setIsAuthorizedOwner(isAuthorized);
-  };
-
-  useEffect(()=>{
     setOwnershipDetails(
       {
         ownershipPercentage,
-        isAuthorizedOwner
+        isAuthorizedOwner:isAuthorized
       }
     )
-  },[isAuthorizedOwner,ownershipPercentage,setOwnershipDetails])
+  };
 
   const verifyForm= ()=>{
     console.log(ownershipDetails)

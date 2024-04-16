@@ -2,10 +2,11 @@ import { ChangeEventHandler, useContext,useState } from 'react';
 import { DataContext } from '../context/DataContext';
 import FirebaseService from '../services/FirebaseService';
 import Navigator from './shared/Navigator';
-import { FormError } from '../interfaces';
+// import { FormError } from '../interfaces';
 
 const BusinessBankStatementsForm: React.FC = () => {
   const {bankStatement,setBankStatement,isLoading} = useContext(DataContext)
+  const [verifyClicked,setVerifiedCick] = useState(false);
   const [isUploading,setUploading] = useState(false)
   const [file,setFile] = useState<File | null>(null);
 
@@ -34,18 +35,30 @@ const BusinessBankStatementsForm: React.FC = () => {
   }
 
   const verify = ()=>{
-    const error:FormError = {
-      isValid:false,
-      message:"please submit your bank statement",
+    
+    if(!bankStatement){
+      return {
+        isValid:false,
+        message:"please submit your bank statement",
+      }
     }
-    if(bankStatement){
-      error.isValid = true
-      error.message = null
+    if(!verifyClicked){
+      return{
+        isValid:false,
+        message:"please verify with plaid",
+      }
     }
-    return error
+    return {
+      isValid: true,
+      message: null
+    }
   }
 
-  
+  const handleVerification = ()=>{
+    const link ="https://verify.plaid.com/verify/idv_d2LgF7k6Z6KoDn?key=4bb833e811be1f706ece055d9382a9a6"
+    setVerifiedCick(true);
+    window.open(link,"_blank")
+  }
   return (
     <>
      {isUploading && (
@@ -117,13 +130,13 @@ const BusinessBankStatementsForm: React.FC = () => {
             <label htmlFor="file-input">
               {file?
               (
-                <div className="file-upload-drop-wq5">
+                <div className="w-full h-[100px] rounded-md flex items-center justify-center p-4 border-dashed border text-center border-gray-300 text-gray-300">
                 <p className="font-bold text-xl">{file.name} <span>Change</span></p>
               </div>
               )
               :(
-                <div className="file-upload-drop-wq5">
-                <p>Drag &amp; drop .PDF files here or <span>click to upload</span></p>
+                <div className="w-full h-[100px] rounded-md flex items-center justify-center p-4 border-dashed border text-center border-gray-300 text-gray-300">
+                <p className="text-xl font-semibold">Drag &amp; drop .PDF files here or <span>click to upload</span></p>
               </div>
               )}
             
@@ -132,89 +145,49 @@ const BusinessBankStatementsForm: React.FC = () => {
             {file?
             (
               <div>
-                <button onClick={uploadFile} className="p-4 my-4 rounded-md text-xl font-bold bg-blue-500 text-white">Upload Statement</button>
+                <button onClick={uploadFile} className="p-4 my-4 rounded-md text-xl font-bold bg-yellow-500 text-black">Upload Statement</button>
               </div>
             )
             :null}
-            <div className="container-bjw">
+            <div className="container-bjw my-2">
               <span className="text-p6q">AND</span>
             </div>
-          
-            <div className="wrapper-nns">
-              <button type="button" className="info-vec">Verify your identity with <img className="logo-4hz" src="https://cdn.businessloans.com/images/Plaid_logo.svg" alt="Plaid Logo" /></button>
-              <div className="plaid-p72">Learn more at <a href="https://plaid.com/safety/">https://plaid.com/safety/</a></div>
+
+            <button
+            onClick={handleVerification}
+            className="p-2 w-full bg-yellow-400 my-2 rounded-xl justify-center flex items-center gap-2"
+            >
+               <span className="text-black text-lg font-medium">Verify your identity with </span>
+              <img className="" src="https://cdn.businessloans.com/images/Plaid_logo.svg" alt="Plaid Logo" />
+              </button>
+            <div className="">
+
               <div className="icon-gio">
+              <div className="text-white mb-4">Learn more at <a className="text-yellow-400 font-medium" href="https://plaid.com/safety/">https://plaid.com/safety/</a></div>
                 <div className="icon-qc4">
                   <div className="icon-5ix">
                     <img src="https://cdn.businessloans.com/images/lock.png" alt="Lock" />
                   </div>
                   <div className="text-6kp">All data is securely encrypted</div>
                 </div>
+
                 <div className="icon-qc4">
                   <div className="icon-5ix">
                     <img src="https://cdn.businessloans.com/images/secure-cloud.png" alt="Secure Cloud" />
                   </div>
                   <div className="text-6kp">Secure cloud infrastructure</div>
                 </div>
+
                 <div className="icon-qc4">
                   <div className="icon-5ix">
                     <img src="https://cdn.businessloans.com/images/data-integrity.png" alt="Data Integrity" />
                   </div>
                   <div className="text-6kp">Verified data integrity</div>
                 </div>
+
               </div>
             </div>
-            <ul className="list-w61"></ul>
-          </section>
-        </main>
-      </div>
-      <div className="inv-mlb form-nhl">
-        <header className="container-d15">
-          <h2>Business Bank Statements</h2>
-          <p className="file-upload-lcm" style={{ fontSize: '1.5rem', maxWidth: '50rem' }}>Upload Your Last 3 Months Of Business Bank Statements. This is what our team will use to analyze and approve your business for funding.</p>
-        </header>
-        <div className="icon-v7w">
-          <div>
-            <img src="https://cdn.businessloans.com/images/lock_vector.svg" alt="Lock Vector" />
-          </div>
-          <div>We take your privacy seriously, all documents are encrypted and stored securely.</div>
-        </div>
-        <main>
-          <section className="container-d15">
-            <label htmlFor="f7b9d9a737993bfe-file-input">
-              <div className="file-upload-drop-wq5">
-                <p>Drag &amp; drop .PDF files here or <span>click to upload</span></p>
-              </div>
-            </label>
-            <input className="input-8cb" id="fil-vn6" name="file-input" type="file" />
-            <div className="container-bjw">
-              <span className="text-p6q">AND</span>
-            </div>
-            <div className="wrapper-nns">
-              <button type="button" className="info-vec">Verify your identity with <img className="logo-4hz" src="https://cdn.businessloans.com/images/Plaid_logo.svg" alt="Plaid Logo" /></button>
-              <div className="plaid-p72">Learn more at <a href="https://plaid.com/safety/">https://plaid.com/safety/</a></div>
-              <div className="icon-gio">
-                <div className="icon-qc4">
-                  <div className="icon-5ix">
-                    <img src="https://cdn.businessloans.com/images/lock.png" alt="Lock" />
-                  </div>
-                  <div className="text-6kp">All data is securely encrypted</div>
-                </div>
-                <div className="icon-qc4">
-                  <div className="icon-5ix">
-                    <img src="https://cdn.businessloans.com/images/secure-cloud.png" alt="Secure Cloud" />
-                  </div>
-                  <div className="text-6kp">Secure cloud infrastructure</div>
-                </div>
-                <div className="icon-qc4">
-                  <div className="icon-5ix">
-                    <img src="https://cdn.businessloans.com/images/data-integrity.png" alt="Data Integrity" />
-                  </div>
-                  <div className="text-6kp">Verified data integrity</div>
-                </div>
-              </div>
-            </div>
-            <ul className="list-w61"></ul>
+
           </section>
         </main>
       </div>
