@@ -25,13 +25,13 @@ const ContactForm: React.FC = () => {
   return (
   <>
     <div className="form-s2p vis-bt1">
-      <h2>What's the best way to reach you?</h2>
+      <h2 className="mb-8">What's the best way to reach you?</h2>
       <div className="wrapper-7x6">
-        <label htmlFor="phoneNumber">Phone Number</label>
+      <label htmlFor="loanAmount" className="text-lg my font-bold">Phone Number</label>
         <input
           type="number"
           id="phoneNumber"
-          style={{color: "black"}}
+          style={{color: "black",textAlign:"left",padding:"8px"}}
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           name="What's the best way to reach you?"
@@ -41,7 +41,7 @@ const ContactForm: React.FC = () => {
         <span className="error-hez"></span>
 
       </div>
-      <div className="dis-gpo mt-4">
+      <div style={{textAlign:"justify"}} className="dis-gpo mt-4">
         <p>
           By clicking on the "" button above, I consent, acknowledge, and agree to the following:
         </p>

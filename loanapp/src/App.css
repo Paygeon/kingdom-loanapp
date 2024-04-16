@@ -334,39 +334,39 @@ label {
     padding-bottom: 3px;
 } 
 
-input[type="text"] { 
-    color: white; 
-    border-radius: 16px; 
-    cursor: text; 
-    display: inline-block; 
-    font-family: CircularStd, sans-serif; 
-    font-size: 21px; 
-    font-stretch: 100%; 
-    font-style: normal; 
-    height: 72px; 
-    border: 1px solid rgb(232, 233, 239); 
-    background-color: rgb(246, 246, 249); 
-    width: 100%; 
-    text-align: center; 
-    padding: 0;
-} 
-
-.form-gd3 input  { 
-    margin-bottom: -26px;
-} 
-
-.form-gd3 .dollar-lo5  { 
-    position: relative; 
-    color: white; 
-    top: -21px; 
-    left: 15px; 
-    display: block; 
-    pointer-events: none; 
-    font-family: CircularStd, sans-serif; 
-    width: 25px; 
-    text-align: center; 
+input[type="text"]{
+    color: white;
+    border-radius: 16px;
+    cursor: text;
+    display: inline-block;
+    font-family: CircularStd, sans-serif;
+    font-size: 21px;
+    font-stretch: 100%;
     font-style: normal;
-} 
+    height: 72px;
+    border: 1px solid rgb(232, 233, 239);
+    background-color: rgb(246, 246, 249);
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+}
+
+.form-gd3 input  {
+    margin-bottom: -26px;
+}
+
+.form-gd3 .dollar-lo5{
+    position: relative;
+    color: white;
+    top: -21px;
+    left: 15px;
+    display: block;
+    pointer-events: none;
+    font-family: CircularStd, sans-serif;
+    width: 25px;
+    text-align: center;
+    font-style: normal;
+}
 
 .error-zg1 { 
     display: block; 
@@ -430,22 +430,22 @@ input[type="email"] {
 a.signature-623.foc-2gn { 
     border-bottom-width: 2px; 
     border-color: rgb(206, 206, 5);
-} 
+}
 
-a.signature-623:hover { 
+a.signature-623:hover {
     border-color: rgb(204, 245, 225);
-} 
+}
 
-input[type="text"].input-od2 { 
-    border: 0; 
-    font-size: 48px; 
-    text-align: center; 
-    background-color: rgb(246, 246, 249); 
-    font-family: "Yellowtail", cursive; 
-    height: 190px; 
-    border-radius: 0; 
+input[type="text"].input-od2 {
+    border: 0;
+    font-size: 48px;
+    text-align: center;
+    background-color: rgb(246, 246, 249);
+    font-family: "Yellowtail", cursive;
+    height: 190px;
+    border-radius: 0;
     width: 100%;
-} 
+}
 
 .file-upload-lcm { 
     color: #6C727F; 
@@ -657,9 +657,9 @@ select option:checked  {
 } 
 
 input[type="number"] { 
-    color: white; 
-    border-radius: 16px; 
-    cursor: text; 
+    color: white;
+    border-radius: 16px;
+    cursor: text;
     display: inline-block; 
     font-family: CircularStd, sans-serif; 
     font-size: 21px; 
@@ -2312,7 +2312,7 @@ input[type="text"] {
   background-color: rgb(246, 246, 249); 
   width: 100%; 
   text-align: center; 
-  padding: 0;
+  padding: 8px;
 } 
 
 .dis-gpo {

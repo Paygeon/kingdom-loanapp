@@ -35,7 +35,7 @@ const FundingReasonForm: React.FC = () => {
   return (
     <div>
       <div className="form-sav vis-j1b">
-      <h2>What are you seeking funding for?</h2>
+      <h2 className="mb-10">What are you seeking funding for?</h2>
       <div className="">
         <div className="">
           <select
@@ -64,7 +64,7 @@ const FundingReasonForm: React.FC = () => {
             ></path>
           </svg> */}
         </div>
-        <span className="error-vlw"></span>
+        {/* <span className="error-vlw"></span> */}
 
       </div>
     </div>

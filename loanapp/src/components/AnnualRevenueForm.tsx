@@ -28,9 +28,9 @@ const AnnualRevenueForm: React.FC = () => {
   return (
     <>
     <div className="form-wzh">
-      <h2>What's your annual revenue?</h2>
+      <h2 className="mb-8">What's your annual revenue?</h2>
       <div className="wrapper-b8b">
-        <label htmlFor="annualRevenue">Annual Revenue</label>
+        <label htmlFor="loanAmount" className="text-lg my font-bold">Annual Revenue (<span>$</span>)</label>
         <input
           type="number"
           value={annualRevenue}
@@ -38,7 +38,7 @@ const AnnualRevenueForm: React.FC = () => {
           name="What's your annual revenue?"
           placeholder="500,000"
           onChange={handleInput}
-          style={{color:"black"}}
+          style={{color:"black",textAlign:"left",padding:"8px"}}
           className="border border-gray-400 rounded-md p-2"
         />
         <i className="dollar-tvy">$</i>

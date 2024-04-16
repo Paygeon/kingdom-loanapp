@@ -30,13 +30,13 @@ const CreditScoreForm: React.FC = () => {
   return (
    <>
     <div className="button-pap">
-      <h2>What's your credit score?</h2>
+      <h2 className="mb-8">What's your credit score?</h2>
       {
         scoreOptions.map(option=>(
           <button
             onClick={handleInput(option)}
             key={option}
-            className={`${creditScore === option?"bg-blue-700":"bg-blue-500"} hover:bg-blue-700 text-white px-4 py-2 rounded-md mt-4 mr-4`}
+            className={`${creditScore === option?"bg-yellow-400":"bg-white"} hover:bg-yellow-400 text-black px-4 py-2 font-medium text-lg rounded-md mt-4 mr-4`}
           >
               {option}
           </button>

@@ -42,7 +42,7 @@ const IndustryForm: React.FC = () => {
   return (
     <>
     <div className="form-5c5 vis-v6c">
-      <h2>What industry are you in?</h2>
+      <h2 className="mb-8">What industry are you in?</h2>
       <div className="wrapper-gfs">
         <div className="wrapper-33b relative">
           <select
@@ -50,26 +50,15 @@ const IndustryForm: React.FC = () => {
             value={industry}
             onChange={e=>setIndustry(e.target.value)}
             name="Industry"
-            className="border border-gray-400 rounded-md p-2 appearance-none"
+            style={{width: "100%"}}
+            className="border border-gray-400 rounded-md p-3 font-medium text-xl appearance-none"
           >
             <option value="">Select One</option>
             {industryOptions.map(option=>(
               <option value={option.value}>{option.label}</option>
             ))}
           </select>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="select-handle absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-            ></path>
-          </svg>
+
         </div>
         <span className="error-qg2"></span>
       </div>

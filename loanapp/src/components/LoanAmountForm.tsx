@@ -24,23 +24,21 @@ const LoanAmountForm: React.FC = () => {
   }
   return (
     <div className="">
-      <h2>How much do you need?</h2>
+      <h2 className="mb-10">How much do you need?</h2>
       <div className="">
-        <label htmlFor="loanAmount">Loan Amount</label>
-        <input
-          type="number"
-          value={loanAmount}
-          onChange={(e)=>setLoanAmount(parseFloat(e.target.value))}
-          id="loanAmount"
-          name="How much do you need?"
-          placeholder="33,500"
-          style={{color: "black"}}
-          className="border border-gray-400 text-black rounded-md p-2"
-        />
-        <i className="dollar-okz" style={{color:"black"}}>$</i>
-        <span className="error-5nq"></span>
+        <label htmlFor="loanAmount" className="text-lg my font-bold">Loan Amount (<span>$</span>)</label>
+          <input
+            type="number"
+            value={loanAmount}
+            onChange={(e)=>setLoanAmount(parseFloat(e.target.value))}
+            id="loanAmount"
+            name="How much do you need?"
+            placeholder="33,500"
+            style={{color: "black",textAlign:"left",padding:"8px"}}
+            className="border text-left border-gray-400 text-black rounded-md p-2"
+          />
       </div>
-      <div className="dis-gsb"></div>
+      <div className=""></div>
        <Navigator verifyForm={verifyForm}/>
       </div>
   );

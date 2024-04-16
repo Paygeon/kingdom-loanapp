@@ -66,64 +66,41 @@ const DateOfBirthForm: React.FC = () => {
   return (
     <>
     <div className="form-aba">
-      <h2>What's your Date of Birth?</h2>
+      <h2 className="mb-8">What's your Date of Birth?</h2>
       <div className="">
-        <div className="">
+        <div className="grid grid-cols-3 gap-3 my-8">
+
           <div className="">
-            <label htmlFor="mon-bwd">Month</label>
+            <label htmlFor="mon-bwd" className="text-lg my font-bold">Month</label>
             <select className="w-full p-4 rounded-md" onChange={handleMonthChange} value={month} name="" id="">
               {monthOptions.map(option=>(
                 <option value={option}>{option}</option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              id="mon-bwd"
-              name="month-What's your Date of Birth?"
-              placeholder="MM"
-              value={month}
-              onChange={handleMonthChange}
-              className="border border-gray-400 rounded-md p-2"
-            /> */}
           </div>
+
           <div className="">
-            <label htmlFor="" style={{color:"white"}}>Day</label><br />
+            <label htmlFor="" className="text-lg my font-bold" style={{color:"white"}}>Day</label>
             <select className="w-full p-4 rounded-md" onChange={handleDayChange} value={day} name="" id="">
               {getDays(month,year).map(option=>(
                 <option value={option}>{option}</option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              id="day-cgo"
-              name="day-What's your Date of Birth?"
-              placeholder="DD"
-              value={day}
-              onChange={handleDayChange}
-              className="border border-gray-400 rounded-md p-2"
-            /> */}
+
           </div>
+
           <div className="">
-            <label htmlFor="" style={{color:"white"}}>Year</label><br />
+            <label htmlFor="" className="text-lg my font-bold" style={{color:"white"}}>Year</label>
             <select className="w-full p-4 rounded-md" onChange={handleYearChange} name="" id="" value={year}>
               {yearOptions.map(option=>(
                 <option value={option}>{option}</option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              id="yea-hfb"
-              name="year-What's your Date of Birth?"
-              placeholder="YYYY"
-              value={year}
-              onChange={handleYearChange}
-              className="border border-gray-400 rounded-md p-2"
-            /> */}
           </div>
+
         </div>
         <span className="error-jsj"></span>
       </div>
-      <br /><br />
     </div>
     <Navigator verifyForm={verifyForm}/>
     </>

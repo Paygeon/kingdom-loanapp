@@ -23,15 +23,19 @@ export default function Navigator({verifyForm}:NavigatorProps){
       alert(error.message)
     }
     return(
-        <div className="flex items-center justify-center gap-16">
+        <div className="flex my-8 items-center gap-16">
         {currentStep > 0 && (
           <NeoPopTiltedButton onClick={previousStep}>Previous Screen</NeoPopTiltedButton>
         )}
         {currentStep < forms.length - 1 && (
-        <NeoPopTiltedButton onClick={handleNext}>Next Screen →</NeoPopTiltedButton>
+        <div className="ml-auto"> 
+          <NeoPopTiltedButton onClick={handleNext}>Next Screen →</NeoPopTiltedButton>
+        </div>
       )}
       {currentStep === forms.length - 1 && (
-        <NeoPopTiltedButton onClick={handleSubmit}>Submit →</NeoPopTiltedButton>
+        <div className="ml-auto">
+          <NeoPopTiltedButton onClick={handleSubmit}>Submit →</NeoPopTiltedButton>
+        </div>
       )}
       </div>
     )

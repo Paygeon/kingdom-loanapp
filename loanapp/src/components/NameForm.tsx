@@ -47,9 +47,9 @@ const NameForm: React.FC = () => {
   return (
    <>
     <div className="form-8oa vis-a38">
-      <h2>What is your name?</h2>
+      <h2 className="mb-8">What is your name?</h2>
       <div className="wrapper-d83">
-        <label htmlFor="firstName">First Name</label>
+        <label htmlFor="loanAmount" className="text-lg my font-bold">First Name</label>
         <input
           type="text"
           id="firstName"
@@ -57,17 +57,19 @@ const NameForm: React.FC = () => {
           onChange={handleFirstnameInput}
           name="What is your name?-firstName"
           placeholder="First Name"
-          style={{color:"black"}}
+          style={{color:"black",textAlign:"left",padding:"8px"}}
           className="border border-gray-400 rounded-md p-2"
         />
         <span className="error-ohz"></span>
-        <label htmlFor="lastName">Last Name</label>
+        <br />
+        <br />
+        <label htmlFor="loanAmount" className="text-lg my font-bold">Last Name </label>
         <input
           type="text"
           value={personalDetails.lastname}
           onChange={handleLastnameInput}
           id="lastName"
-          style={{color:"black"}}
+          style={{color:"black",textAlign:"left",padding:"8px"}}
           name="What is your name?-lastName"
           placeholder="Last Name"
           className="border border-gray-400 rounded-md p-2"

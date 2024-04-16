@@ -18,6 +18,8 @@ interface OwnershipDetails{
 export const DataSchema = {
         isLoading:false,
         isSubmitted:false,
+        isAuthorizedOwner:false,
+        setIsAuthorizedOwner:(value:boolean)=>{},
         businessType:"",
         currentStep:0,
         setBusinessType:(value:string)=>{},

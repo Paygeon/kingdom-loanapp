@@ -34,48 +34,31 @@ const BusinessStartDateForm: React.FC = () => {
   return (
     <>
     <div className="form-nl1 vis-h5b">
-      <h2>When did you start your business?</h2>
-      <div className="wrapper-bv7">
-        <div className="dates-dlh">
-          <div className="date-idl">
-            <label htmlFor="startMonth">Month</label>
-            <select className="border w-full border-gray-400 rounded-md p-2" value={month} onChange={(e)=>setMonth(parseFloat(e.target.value))}>
+      <h2 className="mb-8">When did you start your business?</h2>
+
+      <div className="">
+        <div className="flex items-center gap-4">
+          <div className="flex-1">
+            <p>Month</p>
+            <select
+            style={{color:""}}
+            className="border w-full border-gray-400 rounded-md py-4 p-2"
+            value={month}
+            onChange={(e)=>setMonth(parseFloat(e.target.value))}>
               {monthOptions.map((item,i) => (
                 <option key={`month-option-${i}`} value={item}>{item}</option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              id="startMonth"
-              name="month-When did you start your business?"
-              placeholder="MM"
-              className="border border-gray-400 rounded-md p-2"
-            /> */}
           </div>
-          {/* <div className="date-idl" style={{ display: 'none' }}>
-            <label htmlFor="startDay"></label>
-            <input
-              type="text"
-              id="startDay"
-              name="day-When did you start your business?"
-              placeholder="DD"
-              className="border border-gray-400 rounded-md p-2"
-            />
-          </div> */}
-          <div className="date-idl">
-            <label htmlFor="startYear">Year</label>
-            <select className="border w-full border-gray-400 rounded-md p-2" value={year} onChange={(e)=>setYear(parseFloat(e.target.value))}>
+
+          <div className="flex-1">
+            <p>Year</p>
+            <select className="border w-full border-gray-400 py-4 rounded-md p-2" value={year} onChange={(e)=>setYear(parseFloat(e.target.value))}>
               {yearOptions.map((item,i) => (
                 <option key={`month-option-${i}`} value={item}>{item}</option>
               ))}
             </select>
-            {/* <input
-              type="text"
-              id="startYear"
-              name="year-When did you start your business?"
-              placeholder="YYYY"
-              className="border border-gray-400 rounded-md p-2"
-            /> */}
+
           </div>
         </div>
         <span className="error-8y9"></span>

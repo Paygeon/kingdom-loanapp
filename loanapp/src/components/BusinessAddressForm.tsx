@@ -104,35 +104,95 @@ const BusinessAddressForm: React.FC = () => {
   return (
     <>
     <div className="form-dfr vis-r4o">
-      <h2>What is your business address?</h2>
-      <div className="wrapper-oyw">
-        <label htmlFor="street">Address</label>
-        <input
-          type="text"
-          id="street"
-          name="street"
-          style={{color:"black"}}
-          placeholder="123 Main St"
-          value={addressInfo.address}
-          onChange={handleStreetChange}
-          className="border border-gray-400 rounded-md p-2"
-        />
-        <span className="error-9pr"></span>
-        <label htmlFor="apt">Apt</label>
+      <h2 className="mb-8">What is your business address?</h2>
+      <div className="grid grid-cols-2 gap-8">
+        <div className="">
+        <label htmlFor="loanAmount" className="text-lg my font-bold"> Address</label>
+          <input
+            type="text"
+            id="street"
+            name="street"
+            style={{color:"black",textAlign:"left",padding:"8px"}}
+            placeholder="123 Main St"
+            value={addressInfo.address}
+            onChange={handleStreetChange}
+            className="border border-gray-400 rounded-md p-2"
+          />
+          <span className="error-9pr"></span>
+        </div>
+
+      <div>
+      <label htmlFor="apt" className="text-lg my font-bold">Apt</label>
         <input
           type="text"
           id="apt"
           name="apt"
-          style={{color:"black"}}
+          style={{color:"black",textAlign:"left",padding:"8px"}}
           placeholder="123"
           value={addressInfo.apt}
           onChange={handleAptChange}
           className="border border-gray-400 rounded-md p-2"
         />
         <span className="error-9pr"></span>
-        <div className="d-sry">
+      </div>
+
+      <div>
+      <label htmlFor="zip" className="text-lg my font-bold">Postal Code</label>
+          <input
+            type="text"
+            id="zip"
+            name="zip"
+            value={addressInfo.postalCode}
+            style={{color:"black",textAlign:"left",padding:"8px"}}
+            onChange={handleZipChange}
+            className="border border-gray-400 rounded-md  p-2"
+          />
+          <span className="error-9pr"></span>
+      </div>
+      <div>
+        <label htmlFor="state" className="text-lg my font-bold">State</label>
+            <input
+              // id="state"
+              name="state"
+              style={{color:"black",textAlign:"left",padding:"24px 8px"}}
+              value={addressInfo.state}
+              onChange={handleStateChange}
+              className="border border-gray-400 text-xl font-medium text-center w-full rounded-xl p-2"
+          />
+      </div>
+      <div className="col-span-2">
+        <label htmlFor="city" className="text-lg my font-bold">City</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            style={{color:"black",textAlign:"left",padding:"8px"}}
+            placeholder="Charleston"
+            value={addressInfo.city}
+            onChange={handleCityChange}
+            className="border border-gray-400 rounded-md p-2"
+          />
+          <span className="error-9pr"></span>
+      </div>
+      <div className="flex items-center gap-2">
+      <input
+              type="checkbox"
+              id="useAsHomeAddress"
+              name="useAsHomeAddress"
+              style={{color:"black",height:"24px", width:"24px",borderRadius:"10px"}}
+              checked={addressInfo.isHomeAddress}
+              onChange={handleUseAsHomeAddressChange}
+              className="rounded-md"
+            />
+      <label htmlFor="useAsHomeAddress" className="text-lg my font-bold" style={{ display: 'inline-block' }}>
+            Use my business address as home address
+           
+          </label>
+      </div>
+
+        {/* <div className="d-sry">
           <div>
-            <label htmlFor="zip">Postal Code</label>
+            <label htmlFor="zip" className="text-lg my font-bold">Postal Code</label>
             <input
               type="text"
               id="zip"
@@ -144,8 +204,9 @@ const BusinessAddressForm: React.FC = () => {
             />
             <span className="error-9pr"></span>
           </div>
+          <br />
           <div style={{ flex: 1 }}>
-            <label htmlFor="state">State</label>
+            <label htmlFor="state" className="text-lg my font-bold">State</label>
             <div className="wrapper-s2r">
               <input
                 id="state"
@@ -154,12 +215,13 @@ const BusinessAddressForm: React.FC = () => {
                 value={addressInfo.state}
                 onChange={handleStateChange}
                 className="border border-gray-400 text-xl font-medium text-center w-full py-4 rounded-xl p-2"
-               />
+            />
             </div>
             <span className="error-9pr"></span>
           </div>
         </div>
-        <label htmlFor="city">City</label>
+        <br />
+        <label htmlFor="city" className="text-lg my font-bold">City</label>
         <input
           type="text"
           id="city"
@@ -172,7 +234,7 @@ const BusinessAddressForm: React.FC = () => {
         />
         <span className="error-9pr"></span>
         <div className="vis-r4o">
-          <label htmlFor="useAsHomeAddress" style={{ display: 'inline-block' }}>
+          <label htmlFor="useAsHomeAddress" className="text-lg my font-bold" style={{ display: 'inline-block' }}>
             Use my business address as home address
             <input
               type="checkbox"
@@ -184,8 +246,7 @@ const BusinessAddressForm: React.FC = () => {
               className="style-s6y13"
             />
           </label>
-        </div>
-    
+        </div> */}
       </div>
     </div>
     <Navigator verifyForm={verifyForm}/>

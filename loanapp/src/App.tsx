@@ -10,7 +10,7 @@ const App: React.FC = () => {
 
   if(isSubmitted) return <AfterSubmitting/>;
   return (
-    <div>
+    <div className="max-w-4xl mt-12 mx-auto">
       {forms[currentStep]}
     </div>
   );

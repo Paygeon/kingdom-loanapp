@@ -13,6 +13,7 @@ interface AddressInfo{
 
 export default function useData(){
     const [isSubmitted,setIsSubmitted] = useState(false);
+    const [isAuthorizedOwner,setIsAuthorizedOwner] = useState(false);
     const [isLoading,setLoading] = useState(false);
     const [currentStep, setCurrentStep] = useState(0);
     const [businessType,setBusinessType] = useState("");
@@ -77,6 +78,7 @@ export default function useData(){
         email,
         currentStep,
         ownershipDetails,
+        isAuthorizedOwner,
         ssn,
         addressInfo,
         })
@@ -94,6 +96,8 @@ export default function useData(){
         businessType,
         isSubmitted,
         setBusinessType,
+        isAuthorizedOwner,
+        setIsAuthorizedOwner,
         loanAmount,
         setLoanAmount,
         loanReason,

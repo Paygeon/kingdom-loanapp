@@ -31,18 +31,20 @@ const BusinessTypeSelector: React.FC = () => {
     <>
      <div className="text-center mx-auto">
       <div className="button-jqw vis-6wc">
-        <h2 className="font-serif font-normal text-xl md:text-4xl mt-0 text-blue-700">
+        <h2 className="mb-10">
           What type of business do you own?
         </h2>
+        <div className="my-6">
         {
           businessTypeOptions.map((option) => (
             <button key={option} 
             onClick={handleClick(option)} 
-            className={`${businessType === option?"bg-green-600 text-white":"bg-green-200 text-blue-700"} border border-green-400  rounded-lg cursor-pointer font-sans text-lg md:text-xl font-normal py-4 px-6 md:px-8 block w-full max-w-screen-md mx-auto mt-8 hover:bg-green-600 hover:text-white`}>
+            className={`${businessType === option?"bg-yellow-400 text-black":"bg-white text-black"} border border-yellow-600  rounded-lg cursor-pointer text-lg md:text-xl font-normal py-4 px-6 md:px-8 block w-full my-2 hover:bg-yellow-400 hover:text-black`}>
             {option}
           </button>
           ))
         }
+        </div>
       </div>
     </div>
     <Navigator verifyForm={verifyForm}/>
