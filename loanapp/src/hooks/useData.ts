@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FirebaseService from "../services/FirebaseService";
 // import forms from "../constants/forms";
+import useMessage from "antd/es/message/useMessage";
 
 interface AddressInfo{
     address: string,
@@ -32,6 +33,7 @@ export default function useData(){
     })
     const [phone,setPhone] = useState("")
     const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
     const [ownershipDetails,setOwnershipDetails] = useState({
         ownershipPercentage:0,
         isAuthorizedOwner:false,
@@ -56,7 +58,7 @@ export default function useData(){
     const [businessTaxID,setBusinessTaxID] = useState("")
     const [signature,setSignature] = useState("")
     const [bankStatement,setBankStatement] = useState("")
-
+    const [message,context] = useMessage()
     const nextStep = () => {
         setCurrentStep(currentStep + 1);
     };
@@ -89,14 +91,19 @@ export default function useData(){
         ssn,
         addressInfo,
         })
+        
+        if(response.status !== "success"){
+            // alert("Your form have been submitted and we will get back to you as soon we process this info")
+            message.error(response.errror_message)
+            return;
+        }
+        const response2 = await FirebaseService.createUser(email,password)
         setLoading(false)
-        if(response.status === "success"){
-            alert("Your form have been submitted and we will get back to you as soon we process this info")
-            setIsSubmitted(true)
+        if(response2.status !== "success"){
+            message.error(response.errror_message)
+            return;
         }
-        else{
-            alert(response.errror_message)
-        }
+        setIsSubmitted(true)
     }
 
     return {
@@ -135,6 +142,8 @@ export default function useData(){
         setPhone,
         email,
         setEmail,
+        password,
+        setPassword,
         currentStep,
         ownershipDetails,
         setOwnershipDetails,
@@ -146,5 +155,6 @@ export default function useData(){
         setHomeAddressInfo,
         submitData,
         isLoading,
+        context
     }
 }

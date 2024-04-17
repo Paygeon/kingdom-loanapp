@@ -50,6 +50,8 @@ export const DataSchema = {
         setBusinessTaxID:(value:string)=>{},
         signature:"",
         setSignature:(value:string)=>{},
+        password:"",
+        setPassword:(value:string)=>{},
         bankStatement:"",
         setBankStatement:(value:string)=>{},
         dateOfBirth:new Date().toUTCString(),

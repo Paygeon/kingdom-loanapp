@@ -2,6 +2,7 @@ import { ChangeEventHandler, useContext,useState } from 'react';
 import { DataContext } from '../context/DataContext';
 import FirebaseService from '../services/FirebaseService';
 import Navigator from './shared/Navigator';
+import { Spin } from 'antd';
 // import { FormError } from '../interfaces';
 
 const BusinessBankStatementsForm: React.FC = () => {
@@ -63,12 +64,22 @@ const BusinessBankStatementsForm: React.FC = () => {
     <>
      {isUploading && (
        <div className="fixed top-0  z-[100] left-0 w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center">
-       <p style={{color:"white"}}>Uploading....</p>
+        <div>
+             <Spin
+             size={"large"}
+             />
+            <p className="my-3 text-lg font-bold" style={{color:"white"}}>Uploading....</p>
+        </div>
      </div>
      )} 
      {isLoading && (
        <div className="fixed top-0  z-[100] left-0 w-full h-full bg-[rgba(0,0,0,0.75)] flex items-center justify-center">
-       <p style={{color:"white"}}>Submitting....</p>
+        <div>
+             <Spin
+             size={"large"}
+             />
+            <p className="my-3 text-lg font-bold" style={{color:"white"}}>Submitting....</p>
+        </div>
      </div>
      )}
       <div className="stepgroup-transition-r3h inv-mlb">&nbsp;</div>

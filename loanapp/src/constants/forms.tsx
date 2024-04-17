@@ -7,6 +7,7 @@ import BusinessTaxIDForm from "../components/BusinessTaxIDForm";
 import BusinessTypeSelector from "../components/BusinessTypeSelector";
 import BusinessZipCodeForm from "../components/BusinessZipCodeForm";
 import ContactForm from "../components/ContactForm";
+import CreatePasswordForm from "../components/CreatePassword";
 import CreditScoreForm from "../components/CreditScoreForm";
 import DateofBirthForm from "../components/DateofBirthForm";
 import EmailForm from "../components/EmailForm";
@@ -37,6 +38,7 @@ const forms = [
     <DateofBirthForm />,
     <SSNForm />,
     <SignatureForm />,
+    <CreatePasswordForm/>,
     <BusinessBankStatementsForm />
   ];
 

@@ -1,7 +1,8 @@
 import { addDoc, collection } from "firebase/firestore";
-import { db, storage } from "../firebaseConfig";
+import { auth, db, storage } from "../firebaseConfig";
 import { FirebaseError } from "firebase/app";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 interface Data{
     [key:string]:any;
@@ -54,6 +55,30 @@ class FirebaseService {
             const docRef = await addDoc(colRef,data)
             response.status = "success";
 			response.docId = docRef.id;
+
+        } catch (error) {
+            response.status = "failed";
+			response.error = error;
+			response.errror_message = "could not add data please try again later"
+			if(error instanceof FirebaseError){
+                response.errror_message = error.message;
+            }
+		}
+		return response;
+    }
+    async createUser(email:string,password:string){
+        const response:CustomResponse = {
+			status: "pending",
+			docId: null,
+			error: null,
+			errror_message: "this process is still pending",
+		};
+        
+        try {
+            await createUserWithEmailAndPassword(auth,email,password);
+            response.status = "success";
+			response.docId = email;
+            response.data = email
 
         } catch (error) {
             response.status = "failed";
