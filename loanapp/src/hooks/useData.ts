@@ -5,7 +5,6 @@ import FirebaseService from "../services/FirebaseService";
 interface AddressInfo{
     address: string,
     apt:string,
-    isHomeAddress:boolean,
     city:string,
     state:string,
     postalCode:string,
@@ -41,7 +40,14 @@ export default function useData(){
     const [addressInfo,setAddressInfo] = useState<AddressInfo>({
             address: "",
             apt:"",
-            isHomeAddress:true,
+            city:"",
+            state:"",
+            postalCode:"",
+
+    })
+    const [homeAddressInfo,setHomeAddressInfo] = useState<AddressInfo>({
+            address: "",
+            apt:"",
             city:"",
             state:"",
             postalCode:"",
@@ -136,6 +142,8 @@ export default function useData(){
         setSSN,
         addressInfo,
         setAddressInfo,
+        homeAddressInfo,
+        setHomeAddressInfo,
         submitData,
         isLoading,
     }

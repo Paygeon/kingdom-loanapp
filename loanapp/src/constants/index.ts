@@ -5,11 +5,11 @@ interface PersonalDetails{
 interface AddressInfo{
     address: string,
     apt:string,
-    isHomeAddress:boolean,
     city:string,
     state:string,
     postalCode:string,
 }
+
 interface OwnershipDetails{
         ownershipPercentage:number,
         isAuthorizedOwner:boolean,
@@ -68,11 +68,18 @@ export const DataSchema = {
         addressInfo:{
             address: "",
             apt:"",
-            isHomeAddress:true,
             city:"",
             state:"",
             postalCode:"",
         },
-        setAddressInfo:(value:AddressInfo)=>{},
+        setAddressInfo:(value:AddressInfo)=>{}, 
+        homeAddressInfo:{
+            address: "",
+            apt:"",
+            city:"",
+            state:"",
+            postalCode:"",
+        },
+        setHomeAddressInfo:(value:AddressInfo)=>{},
         async submitData(){}
 }
