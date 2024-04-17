@@ -25,7 +25,7 @@ export default function Navigator({verifyForm}:NavigatorProps){
     return(
         <div className="md:flex my-8 items-center gap-16">
         {currentStep > 0 && (
-          <div className="my-6 md:my-0">
+          <div className="hidden md:block my-6 md:my-0">
             <NeoPopTiltedButton onClick={previousStep}>Previous Screen</NeoPopTiltedButton>
           </div>
         )}

@@ -107,7 +107,7 @@ export default function useAddressForm(){
           message:"your Postal should atleast be 3 characters long"
         }
       } 
-      if(addressInfo.state.trim().length < 3){
+      if(addressInfo.state.trim().length < 2){
         return{
           isValid:false,
           message:"your state should atleast be 3 characters long"
@@ -137,7 +137,7 @@ export default function useAddressForm(){
           message:"your home postal code should atleast be 3 characters long"
         }
       } 
-      if(homeAddressInfo.state.trim().length < 3){
+      if(homeAddressInfo.state.trim().length < 2){
         return{
           isValid:false,
           message:"your home state should atleast be 3 characters long"
