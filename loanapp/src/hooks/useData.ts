@@ -13,6 +13,7 @@ interface AddressInfo{
 }
 
 export default function useData(){
+    const [completedStep,setCompletedStep] = useState<number[]>([0])
     const [isSubmitted,setIsSubmitted] = useState(false);
     const [isAuthorizedOwner,setIsAuthorizedOwner] = useState(true);
     const [isLoading,setLoading] = useState(false);
@@ -61,6 +62,9 @@ export default function useData(){
     const [message,context] = useMessage()
     const nextStep = () => {
         setCurrentStep(currentStep + 1);
+        if(!completedStep.includes(currentStep + 1)){
+            setCompletedStep(prev=>[...prev,currentStep+1])
+        }
     };
 
     const previousStep = () => {
@@ -155,6 +159,8 @@ export default function useData(){
         setHomeAddressInfo,
         submitData,
         isLoading,
+        setCurrentStep,
+        completedStep,
         context
     }
 }

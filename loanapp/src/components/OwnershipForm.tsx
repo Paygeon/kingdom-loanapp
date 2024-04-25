@@ -49,33 +49,33 @@ const OwnershipForm: React.FC = () => {
   return (
     <>
     <div className="vis-5ir">
-      <h2 className="mb-8">What's your ownership percentage?</h2>
-      <div className="wrapper-p3a">
-        <label htmlFor="loanAmount" className="text-lg my font-bold"> Ownership Percentage</label>
+      <h2 className="mb-8 text-2xl font-bold text-dark max-w-3xl md:text-5xl">What's your ownership percentage?</h2>
+      <div className="max-w-2xl">
+        <label htmlFor="loanAmount" className="text-lg mt-4 my-1 block text-gray-600 font-medium"> Ownership Percentage</label>
         <input
           type="number"
           id="ownershipPercentage"
           name="Ownership-pct"
           placeholder="100"
-          style={{color:"black",textAlign:"left",padding:"8px"}}
+          style={{outline:"none"}}
           value={ownershipPercentage}
           onChange={handleOwnershipPercentageChange}
-          className="border border-gray-400 rounded-md p-2"
+          className="bg-gray-100 rounded-full px-4 p-3 w-full"
         />
         <span className="error-492"></span>
         <div style={{ marginTop: '24px' }}>
-          <label htmlFor="loanAmount" className="text-lg my font-bold"> Are you an authorized owner for this business?</label>
+          <label htmlFor="loanAmount" className="text-sm sm:text-lg my-2 text-gray-600 font-medium"> Are you an authorized owner for this business?</label>
 
-          <div style={{ display: 'flex',gap:"4px" }}>
+          <div className="flex my-4 items-center gap-2">
             <button
-              className={`button-yvf p-4 rounded-md text-xl ${isAuthorizedOwner ? 'bg-yellow-500' : 'bg-white'}`}
+              className={`min-w-[80px] md:min-w-[120px] py-3 rounded-full text-sm sm:text-xl ${isAuthorizedOwner ? 'bg-dark text-white ' : 'text-dark bg-dark-200 hover:bg-dark-200'}`}
               onClick={() => handleAuthorizationClick(true)}
             >
               Yes
             </button>
             &nbsp;
             <button
-              className={`button-yvf p-4 rounded-md text-xl ${!isAuthorizedOwner ? 'bg-yellow-500' : 'bg-white'}`}
+              className={`min-w-[80px] md:min-w-[120px] py-3 rounded-full text-sm md:text-xl ${!isAuthorizedOwner ? 'bg-primary text-white' : 'text-dark bg-dark-200 hover:bg-primary-400'}`}
               onClick={() => handleAuthorizationClick(false)}
             >
               No
@@ -84,7 +84,7 @@ const OwnershipForm: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="dis-vo3"></div>
+      <br /><br />
     </div>
     <Navigator verifyForm={verifyForm}/>
     </>

@@ -34,22 +34,19 @@ const FundingReasonForm: React.FC = () => {
   }
   return (
     <div>
-      <div className="form-sav vis-j1b">
-      <h2 className="mb-10">What are you seeking funding for?</h2>
+      <div className="mb-20">
+      <h2 className="mb-4 text-3xl font-bold text-dark sm:text-5xl">What are you seeking funding for?</h2>
       <div className="">
         <div className="">
-          <select
-            onChange={(e)=>setLoanReason(e.target.value)}
+          <div
             id="loanReason"
-            value={loanReason}
-            name="Loan Reason"
-            className="border border-gray-400 w-full my-4 text-xl py-2 rounded-md p-2 appearance-none"
+            className="md:flex gap-2 flex-wrap max-w-3xl my-4 text-xl py-2 rounded-md appearance-none"
           >
-            <option value="">Select One</option>
+            {/* <option value="">Select One</option> */}
             {options.map(option=>(
-              <option key={option.label} value={option.value}>{option.label}</option>
+              <button className={`px-4 md:px-6 ${loanReason === option.value?"bg-dark text-white":"hover:bg-dark-300"} rounded-full py-2 text-sm mr-1 m-1 md:mr-2 sm:text-lg border border-dark text-dark`} key={option.label} onClick={(e)=>setLoanReason(option.value)}>{option.label}</button>
             ))}
-          </select>
+          </div>
           {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

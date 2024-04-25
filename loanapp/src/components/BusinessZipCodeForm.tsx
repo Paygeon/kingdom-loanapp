@@ -24,18 +24,18 @@ const BusinessZipCodeForm: React.FC = () => {
   }
   return (
     <div>
-      <h2 className="mb-8">What's the business zip code?</h2>
-      <div className="wrapper-2aw">
-      <label htmlFor="loanAmount" className="text-lg my font-bold"> Zip Code </label>
+      <h2 className="mb-8 text-3xl font-bold text-dark max-w-3xl md:text-5xl">What's the business zip code?</h2>
+      <div className="sm:max-w-md">
+      <label htmlFor="loanAmount" className="text-sm md:text-lg mx-3 text-gray-600 my font-medium block"> Zip Code </label>
         <input
           type="number"
-          style={{color: "#000000",textAlign:"left",padding:"8px"}}
           value={businessZipCode}
           id="businessZipCode"
           onChange={e=>setBusinessZipCode(e.target.value)}
           name="What's the business zip code?"
           placeholder="29401"
-          className="border border-gray-400 rounded-md p-2"
+          style={{outline:"none"}}
+          className="p-3 bg-gray-100 w-full rounded-full text-sm md:text-lg px-4"
         />
         <span className="error-ybr"></span>
       </div>

@@ -66,13 +66,20 @@ const DateOfBirthForm: React.FC = () => {
   return (
     <>
     <div className="form-aba">
-      <h2 className="mb-8">What's your Date of Birth?</h2>
-      <div className="">
+      <h2 className="mb-8 max-w-3xl font-bold text-dark text-3xl md:text-5xl">What's your Date of Birth?</h2>
+      <div className="max-w-lg">
         <div className="grid grid-cols-3 gap-3 my-8">
 
           <div className="">
-            <label htmlFor="mon-bwd" className="text-lg my font-bold">Month</label>
-            <select className="w-full p-4 rounded-md" onChange={handleMonthChange} value={month} name="" id="">
+            <label htmlFor="mon-bwd" className="text-sm sm:text-lg mx-2 font-medium">Month</label>
+            <select
+            className="bg-gray-100 w-full text-sm sm:text-base text-dark px-2 sm:px-4 rounded-full p-2 sm:p-3"
+            style={{outline:"none"}}
+            onChange={handleMonthChange} 
+            value={month} 
+            name="" 
+            id=""
+            >
               {monthOptions.map(option=>(
                 <option value={option}>{option}</option>
               ))}
@@ -80,8 +87,14 @@ const DateOfBirthForm: React.FC = () => {
           </div>
 
           <div className="">
-            <label htmlFor="" className="text-lg my font-bold" style={{color:"white"}}>Day</label>
-            <select className="w-full p-4 rounded-md" onChange={handleDayChange} value={day} name="" id="">
+            <label htmlFor="" className="text-sm sm:text-lg mx-2 font-medium">Day</label>
+            <select
+            className="bg-gray-100 text-sm sm:text-base w-full text-dark px-4 rounded-full p-2 sm:p-3"
+            style={{outline:"none"}}
+            onChange={handleDayChange} 
+            value={day} 
+            name="" id=""
+            >
               {getDays(month,year).map(option=>(
                 <option value={option}>{option}</option>
               ))}
@@ -90,8 +103,15 @@ const DateOfBirthForm: React.FC = () => {
           </div>
 
           <div className="">
-            <label htmlFor="" className="text-lg my font-bold" style={{color:"white"}}>Year</label>
-            <select className="w-full p-4 rounded-md" onChange={handleYearChange} name="" id="" value={year}>
+            <label htmlFor="" className="text-sm sm:text-lg mx-2 font-medium">Year</label>
+            <select
+            className="bg-gray-100 w-full text-sm sm:text-base text-dark px-4 rounded-full p-2 sm:p-3"
+            style={{outline:"none"}}
+            onChange={handleYearChange}
+            name=""
+            id=""
+            value={year}
+            >
               {yearOptions.map(option=>(
                 <option value={option}>{option}</option>
               ))}

@@ -42,16 +42,16 @@ const IndustryForm: React.FC = () => {
   return (
     <>
     <div className="form-5c5 vis-v6c">
-      <h2 className="mb-8">What industry are you in?</h2>
-      <div className="wrapper-gfs">
-        <div className="wrapper-33b relative">
+      <h2 className="mb-8 text-3xl font-bold text-dark max-w-3xl md:text-5xl">What industry are you in?</h2>
+      <div className="">
+        <div className="">
           <select
             id="industry"
             value={industry}
             onChange={e=>setIndustry(e.target.value)}
             name="Industry"
-            style={{width: "100%"}}
-            className="border border-gray-400 rounded-md p-3 font-medium text-xl appearance-none"
+            style={{outline: "none"}}
+            className="w-full sm:w-[60%] bg-gray-100 px-6 rounded-md p-3 text-gray-600 font-semibold text-sm md:text-xl appearance-none"
           >
             <option value="">Select One</option>
             {industryOptions.map(option=>(

@@ -29,17 +29,15 @@ const BusinessTypeSelector: React.FC = () => {
   }
   return (
     <>
-     <div className="text-center mx-auto">
-      <div className="button-jqw vis-6wc">
-        <h2 className="mb-10">
-          What type of business do you own?
-        </h2>
-        <div className="my-6">
+     <div className="mx-auto">
+      <div className="">
+        <h2 className="mb-10 sm:w-11/12 md:w-[65%] text-3xl md:text-5xl font-bold text-dark">What type of business do you own?</h2>
+        <div className="my-6 max-w-3xl justify-start flex flex-wrap">
         {
           businessTypeOptions.map((option) => (
             <button key={option} 
             onClick={handleClick(option)} 
-            className={`${businessType === option?"bg-yellow-400 text-black":"bg-white text-black"} border border-yellow-600  rounded-lg cursor-pointer text-lg md:text-xl font-normal py-4 px-6 md:px-8 block w-full my-2 hover:bg-yellow-400 hover:text-black`}>
+            className={`${businessType === option?"bg-dark text-white":"text-dark hover:bg-dark-300 "} mr-1 my-1 md:mr-2 text-sm md:text-lg px-4 rounded-full border border-dark py-2`}>
             {option}
           </button>
           ))

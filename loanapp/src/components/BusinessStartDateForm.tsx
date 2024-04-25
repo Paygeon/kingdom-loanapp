@@ -34,15 +34,15 @@ const BusinessStartDateForm: React.FC = () => {
   return (
     <>
     <div className="form-nl1 vis-h5b">
-      <h2 className="mb-8">When did you start your business?</h2>
+      <h2 className="mb-8 max-w-3xl text-3xl text-dark sm:text-5xl font-bold">When did you start your business?</h2>
 
-      <div className="">
+      <div className="w-10/12 sm:max-w-md">
         <div className="flex items-center gap-4">
           <div className="flex-1">
-            <p>Month</p>
+            <p className="text-lg text-gray-600 font-medium">Month</p>
             <select
-            style={{color:""}}
-            className="border w-full border-gray-400 rounded-md py-4 p-2"
+            style={{outline:"none"}}
+            className="bg-gray-100 w-full rounded-md p-2"
             value={month}
             onChange={(e)=>setMonth(parseFloat(e.target.value))}>
               {monthOptions.map((item,i) => (
@@ -52,8 +52,13 @@ const BusinessStartDateForm: React.FC = () => {
           </div>
 
           <div className="flex-1">
-            <p>Year</p>
-            <select className="border w-full border-gray-400 py-4 rounded-md p-2" value={year} onChange={(e)=>setYear(parseFloat(e.target.value))}>
+            <p className="text-lg text-gray-600 font-medium">Year</p>
+            <select
+            className="bg-gray-100 w-full rounded-md p-2"
+            value={year}
+            style={{outline:"none"}}
+            onChange={(e)=>setYear(parseFloat(e.target.value))}
+            >
               {yearOptions.map((item,i) => (
                 <option key={`month-option-${i}`} value={item}>{item}</option>
               ))}

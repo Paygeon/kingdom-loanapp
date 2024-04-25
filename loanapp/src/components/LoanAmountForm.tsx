@@ -24,18 +24,18 @@ const LoanAmountForm: React.FC = () => {
   }
   return (
     <div className="">
-      <h2 className="mb-10">How much do you need?</h2>
-      <div className="">
-        <label htmlFor="loanAmount" className="text-lg my font-bold">Loan Amount (<span>$</span>)</label>
+      <h2 className="mb-10 text-3xl text-dark font-bold md:text-5xl">How much do you need?</h2>
+      <div className="max-w-lg">
+        <label htmlFor="loanAmount" className="md:text-xl mx-3 my-2 text-gray-600 block">Loan Amount (<span>$</span>)</label>
           <input
             type="number"
             value={loanAmount}
             onChange={(e)=>setLoanAmount(parseFloat(e.target.value))}
             id="loanAmount"
             name="How much do you need?"
+            style={{outline: "none"}}
             placeholder="33,500"
-            style={{color: "black",textAlign:"left",padding:"8px"}}
-            className="border text-left border-gray-400 text-black rounded-md p-2"
+            className="sm:text-xl rounded-full font-semibold w-full text-left bg-gray-100 text-dark py-3 p-4"
           />
       </div>
       <div className=""></div>

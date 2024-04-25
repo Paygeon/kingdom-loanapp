@@ -47,10 +47,12 @@ const CreatePasswordForm: React.FC = () => {
   return (
    <>
     <div className="form-8oa vis-a38">
-      <h2 className="mb-8">Choose Your Password</h2>
-      <div className="wrapper-d83">
-        <label htmlFor="loanAmount" className="text-lg my font-bold">Password</label>
-        <div className="bg-white flex gap-2 border rounded-md border-gray-400 px-3 p-1">
+      <h2 className="mb-8 md:text-5xl font-bold text-2xl max-w-3xl text-dark">Choose Your Password</h2>
+      <div className="max-w-2xl">
+        <label htmlFor="loanAmount" className="text-sm sm:text-lg mx-3 font-medium">Password</label>
+        <div 
+          className="bg-gray-100 flex items-center px-4 w-full text-dark rounded-full"
+        >
         <input
           type={passwordShown?"":"password"}
           id="password"
@@ -58,27 +60,25 @@ const CreatePasswordForm: React.FC = () => {
           onChange={handlePasswordInput}
           name="password"
           placeholder="Enter your password"
-          style={{color:"black",textAlign:"left",padding:"8px",outline:"none"}}
-          className="w-full py-2"
+          className="bg-gray-100 w-full text-sm sm:text-base flex-1 text-dark rounded-full py-3"
+          style={{outline:"none"}}
         />
         <button onClick={togglePasswordShown}>
             {passwordShown ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}
         </button>
         </div>
         <span className="error-ohz"></span>
-        <br />
-        <br />
-        <label htmlFor="loanAmount" className="text-lg my font-bold">Confirm Password</label>
-        <div className="bg-white flex gap-2 border rounded-md border-gray-400 px-3 p-1">
+
+        <label htmlFor="loanAmount" className="text-sm sm:text-lg mt-8 block mx-3 font-medium">Confirm Password</label>
+        <div className="bg-gray-100 flex items-center px-4 w-full text-dark rounded-full">
             <input
             type={confirmPasswordShown?"":"password"}
             value={confirmPassword}
             onChange={handleConfirmPasswordInput}
             id="lastName"
-            style={{color:"black",textAlign:"left",padding:"8px"}}
-            name="What is your name?-lastName"
+            style={{background:"none",outline:"none"}}
             placeholder="Confirm your Password"
-            className="w-full py-2"
+            className="w-full py-2 text-sm sm:text-base"
             />
              <button onClick={toggleConfirmPasswordShown}>
             {confirmPasswordShown ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}

@@ -27,23 +27,23 @@ const EmailForm: React.FC = () => {
   return (
     <>
     <div>
-      <h2 className="mb-8">What's your email address?</h2>
-      <div className="wrapper-98c">
-      <label htmlFor="loanAmount" className="text-lg my font-bold"> Email Address</label>
+      <h2 className="mb-8 text-3xl font-bold text-primary max-w-3xl md:text-5xl">What's your email address?</h2>
+      <div className="max-w-2xl">
+      <label htmlFor="loanAmount" className="text-sm sm:text-lg my block font-medium text-gray-600"> Email Address</label>
         <input
           type="email"
           value={email}
           onChange={((e)=>setEmail(e.target.value))}
           id="emailAddress"
-          style={{color:"black",textAlign:"left",padding:"8px"}}
+          style={{outline:"none",}}
           name="What's your email address?"
           placeholder="email@company.com"
-          className="border border-gray-400 rounded-md p-2"
+          className="bg-gray-100 text-sm sm:text-lg w-full rounded-full px-4 p-3"
         />
         <span className="error-jws"></span>
       </div>
-      <div className="dis-y6i mt-8">
-        <p style={{textAlign:"justify"}}>
+      <div className="dis-y6i mt-8 mb-32">
+        <p className="text-sm sm:text-base">
           You understand that by clicking on the  button that you are providing written instructions to
           Carat Card Club (Paygeon.com) under the Fair Credit Reporting Act authorizing Carat Card Club
           (Paygeon.com) to obtain information from your personal credit profile or other information

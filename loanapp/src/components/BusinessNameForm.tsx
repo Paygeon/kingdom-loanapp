@@ -25,18 +25,18 @@ const BusinessNameForm: React.FC = () => {
   return (
     <>
     <div className="form-9mr vis-bi7">
-      <h2 className="mb-8">What is your business name?</h2>
-      <div className="wrapper-ehd">
-        <label htmlFor="loanAmount" className="text-lg my font-bold">Business Name</label>
+      <h2 className="mb-8 text-3xl font-bold text-dark max-w-3xl md:text-5xl">What is your business name?</h2>
+      <div className="max-w-md">
+        <label htmlFor="loanAmount" className="text-sm mx-3 md:text-lg my-1 block font-medium text-gray-600">Business Name</label>
         <input
           type="text"
           value={businessName}
-          style={{color:"black",textAlign:"left",padding:"8px"}}
+          style={{outline:"none",}}
           onChange={e=>setBusinessName(e.target.value)}
           id="businessName"
           name="What is your business name?"
           placeholder="Acme, Inc"
-          className="border border-gray-400 rounded-md p-2"
+          className="bg-gray-100 w-full rounded-full text-sm md:text-lg px-4 p-3"
         />
         <span className="error-lvg"></span>
       </div>

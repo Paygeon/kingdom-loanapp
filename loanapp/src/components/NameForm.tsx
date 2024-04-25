@@ -47,9 +47,9 @@ const NameForm: React.FC = () => {
   return (
    <>
     <div className="form-8oa vis-a38">
-      <h2 className="mb-8">What is your name?</h2>
-      <div className="wrapper-d83">
-        <label htmlFor="loanAmount" className="text-lg my font-bold">First Name</label>
+      <h2 className="mb-8 text-3xl font-bold text-dark max-w-3xl md:text-5xl">What is your name?</h2>
+      <div className="max-w-xl">
+        <label htmlFor="loanAmount" className="text-sm md:text-lg mx-3 block text-dark font-medium">First Name</label>
         <input
           type="text"
           id="firstName"
@@ -57,22 +57,19 @@ const NameForm: React.FC = () => {
           onChange={handleFirstnameInput}
           name="What is your name?-firstName"
           placeholder="First Name"
-          style={{color:"black",textAlign:"left",padding:"8px"}}
-          className="border border-gray-400 rounded-md p-2"
+          style={{outline:"none"}}
+          className="bg-gray-100 text-sm md:text-lg w-full px-4 rounded-full p-3"
         />
-        <span className="error-ohz"></span>
-        <br />
-        <br />
-        <label htmlFor="loanAmount" className="text-lg my font-bold">Last Name </label>
+        <label htmlFor="loanAmount" className="text-sm mt-10 md:text-lg mx-3 block text-dark font-medium">Last Name </label>
         <input
           type="text"
           value={personalDetails.lastname}
           onChange={handleLastnameInput}
           id="lastName"
-          style={{color:"black",textAlign:"left",padding:"8px"}}
+          style={{outline:"none"}}
           name="What is your name?-lastName"
           placeholder="Last Name"
-          className="border border-gray-400 rounded-md p-2"
+          className="bg-gray-100 w-full text-sm md:text-lg px-4 rounded-full p-3"
         />
         <span className="error-ohz"></span>
       </div>

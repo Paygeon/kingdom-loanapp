@@ -27,10 +27,10 @@ const AnnualRevenueForm: React.FC = () => {
   }
   return (
     <>
-    <div className="form-wzh">
-      <h2 className="mb-8">What's your annual revenue?</h2>
-      <div className="wrapper-b8b">
-        <label htmlFor="loanAmount" className="text-lg my font-bold">Annual Revenue (<span>$</span>)</label>
+    <div className="">
+      <h2 className="mb-8 text-3xl font-bold text-dark max-w-3xl md:text-5xl">What's your annual revenue?</h2>
+      <div className="max-w-md">
+        <label htmlFor="loanAmount" className="text-lg my-2 my font-medium text-gray-600 block">Annual Revenue (<span>$</span>)</label>
         <input
           type="number"
           value={annualRevenue}
@@ -38,12 +38,9 @@ const AnnualRevenueForm: React.FC = () => {
           name="What's your annual revenue?"
           placeholder="500,000"
           onChange={handleInput}
-          style={{color:"black",textAlign:"left",padding:"8px"}}
-          className="border border-gray-400 rounded-md p-2"
+          style={{outline:"none"}}
+          className="bg-gray-100 w-full text-gray-700 text-lg font-semibold rounded-full px-4 p-3"
         />
-        <i className="dollar-tvy">$</i>
-        <span className="error-p9f"></span>
-   
       </div>
       <div className="dis-9w8"></div>
     </div>

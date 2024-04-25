@@ -47,8 +47,10 @@ export default function useAddressForm(){
       })
     };
   
-    const handleUseAsHomeAddressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setIsHomeAddress(event.target.checked)
+    const handleUseAsHomeAddressChange = (value:boolean) => {
+      return ()=>{
+        setIsHomeAddress(value)
+      }
     };
 
 

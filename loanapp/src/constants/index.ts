@@ -1,3 +1,63 @@
+type VoidFunction<T> = (value:T)=>void;
+type VoidFunctionWithoutParams = ()=>void;
+type PromiseVoidFunction = () => Promise<void>;
+
+
+interface DataSchemaType {
+    isLoading:boolean,
+    isSubmitted:boolean,
+    isAuthorizedOwner:boolean,
+    setIsAuthorizedOwner:VoidFunction<boolean>,
+    businessType:string,
+    currentStep:number,
+    setBusinessType:VoidFunction<string>,
+    nextStep:VoidFunctionWithoutParams,
+    previousStep:VoidFunctionWithoutParams,
+    loanAmount:number,
+    setLoanAmount:VoidFunction<number>,
+    loanReason:string,
+    setLoanReason:VoidFunction<string>,
+    businessStartDate:string,
+    setBusinessStartDate:VoidFunction<string>,
+    annualRevenue:number,
+    setAnnualRevenue:VoidFunction<number>,
+    creditScore:string,
+    setCreditScore:VoidFunction<string>,
+    industry:string,
+    setIndustry:VoidFunction<string>,
+    businessZipCode:string,
+    setBusinessZipCode:VoidFunction<string>,
+    businessName:string,
+    setBusinessName:VoidFunction<string>,
+    personalDetails:PersonalDetails,
+    setPersonalDetails:VoidFunction<PersonalDetails>,
+    businessTaxID:string,
+    setBusinessTaxID:VoidFunction<string>,
+    signature:string,
+    setSignature:VoidFunction<string>,
+    password:string,
+    setPassword:VoidFunction<string>,
+    bankStatement:string,
+    setBankStatement:VoidFunction<string>,
+    dateOfBirth:string,
+    setDateOfBirth:VoidFunction<string>,
+    phone:string,
+    setPhone:VoidFunction<string>,
+    email:string,
+    setEmail:VoidFunction<string>,
+    ownershipDetails:OwnershipDetails,
+    setOwnershipDetails:VoidFunction<OwnershipDetails>,
+    ssn:string,
+    setSSN:VoidFunction<string>,
+    addressInfo:AddressInfo,
+    setAddressInfo:VoidFunction<AddressInfo>,
+    homeAddressInfo:AddressInfo,
+    setHomeAddressInfo:VoidFunction<AddressInfo>,
+    setCurrentStep:VoidFunction<number>,
+    submitData:PromiseVoidFunction,
+    completedStep:number[],
+}
+
 interface PersonalDetails{
     lastname: string,
     firstname: string,
@@ -15,7 +75,7 @@ interface OwnershipDetails{
         isAuthorizedOwner:boolean,
 }
 
-export const DataSchema = {
+export const DataSchema:DataSchemaType = {
         isLoading:false,
         isSubmitted:false,
         isAuthorizedOwner:false,
@@ -83,5 +143,8 @@ export const DataSchema = {
             postalCode:"",
         },
         setHomeAddressInfo:(value:AddressInfo)=>{},
-        async submitData(){}
+        setCurrentStep:(newStep:number)=>{},
+        async submitData(){},
+        completedStep:[],
+        
 }

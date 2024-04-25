@@ -34,22 +34,22 @@ const BusinessTaxIDForm: React.FC = () => {
   return (
     <>
     <div>
-      <h2 className="mb-8">What's your Business Tax ID (EIN)?</h2>
-      <div className="wrapper-81z">
-        <label htmlFor="ein" className="text-lg my font-bold">EIN</label>
+      <h2 className="mb-8 text-3xl max-w-3xl font-bold text-dark md:text-5xl">What's your Business Tax ID (EIN)?</h2>
+      <div className="max-w-2xl">
+        <label htmlFor="ein" className="text-sm sm:text-lg block font-medium mx-2">EIN</label>
         <input
           type="text"
           id="ein"
           name="ein"
           placeholder="00-0000000"
           value={businessTaxID}
-          style={{color:"black",textAlign:"left",padding:"8px"}}
+          className="bg-gray-100 w-full text-sm sm:text-base text-dark px-4 rounded-full p-3"
+          style={{outline:"none"}}
           onChange={handleEINChange}
-          className="border border-gray-400 rounded-md p-2"
         />
         <span className="error-3k7"></span>
         <div className="dis-y6i my-3" style={{textAlign:"left"}}>
-          If you're a sole proprietor and your SSN is your TaxID, please select the  button.
+          {/* If you're a sole proprietor and your SSN is your TaxID, please select the  button. */}
         </div>
         {/* <div style={{ display: 'flex',gap:"4px" }}>
             <button

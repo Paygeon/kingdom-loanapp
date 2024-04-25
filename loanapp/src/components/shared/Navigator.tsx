@@ -7,7 +7,7 @@ import useMessage from "antd/es/message/useMessage"
 
 
 export default function Navigator({verifyForm}:NavigatorProps){
-    const {currentStep,previousStep,nextStep,submitData} = useContext(DataContext)
+    const {currentStep,nextStep,submitData} = useContext(DataContext)
     const [message,context] = useMessage()
 
     const handleNext = ()=> {
@@ -26,25 +26,20 @@ export default function Navigator({verifyForm}:NavigatorProps){
       message.error(error.message)
     }
     return(
-      <>
+      <div className="shadow-md fixed bg-white bottom-0 left-0 w-full md:pb-4 md:px-4">
       {context}
-       <div className="md:flex my-8 items-center gap-16">
-        {currentStep > 0 && (
-          <div className="hidden md:block my-6 md:my-0">
-            <NeoPopTiltedButton onClick={previousStep}>Previous Screen</NeoPopTiltedButton>
-          </div>
-        )}
+       <div className="flex border-t border-dark-100 max-w-5xl p-4 mx-auto items-center gap-16">
         {currentStep < forms.length - 1 && (
         <div className="ml-auto"> 
-          <NeoPopTiltedButton onClick={handleNext}>Next Screen →</NeoPopTiltedButton>
+          <NeoPopTiltedButton onClick={handleNext}>Next</NeoPopTiltedButton>
         </div>
       )}
       {currentStep === forms.length - 1 && (
         <div className="ml-auto">
-          <NeoPopTiltedButton onClick={handleSubmit}>Submit →</NeoPopTiltedButton>
+          <NeoPopTiltedButton onClick={handleSubmit}>Submit</NeoPopTiltedButton>
         </div>
       )}
       </div>
-      </>
+      </div>
     )
 }
