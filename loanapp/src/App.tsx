@@ -6,6 +6,8 @@ import forms from './constants/forms';
 import AfterSubmitting from './components/AfterSubmitting';
 import { ConfigProvider } from 'antd';
 import Steps from './components/shared/Steps';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const {currentStep,isSubmitted,previousStep} = useContext(DataContext)
@@ -20,6 +22,7 @@ const App: React.FC = () => {
         },
       }}
     >
+      <Header/>
       <Steps/>
       <div className="max-w-5xl p-4 mx-auto">
       {currentStep > 0 && (
@@ -31,6 +34,7 @@ const App: React.FC = () => {
         {forms[currentStep]}
       </div>
     </div>
+    <Footer/>
     </ConfigProvider>
     
   );

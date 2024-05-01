@@ -38,9 +38,20 @@ const FundingReasonForm: React.FC = () => {
       <h2 className="mb-4 text-3xl font-bold text-dark sm:text-5xl">What are you seeking funding for?</h2>
       <div className="">
         <div className="">
+          <div className="my-6 max-w-2xl md:hidden">
+            <select value={loanReason} onChange={(e)=>setLoanReason(e.target.value)} className="text-dark w-full  mr-1 my-1 md:mr-2 text-sm md:text-lg px-4 rounded-full border border-dark py-2" name="" id="">
+                  {
+                  options.map((option) => (
+                    <option value={option.value} key={option.label}>
+                    {option.label}
+                  </option>
+                  ))
+                }
+              </select>
+          </div>
           <div
             id="loanReason"
-            className="md:flex gap-2 flex-wrap max-w-3xl my-4 text-xl py-2 rounded-md appearance-none"
+            className="hidden md:flex gap-1 flex-wrap max-w-3xl my-4 text-xl py-2 rounded-md appearance-none"
           >
             {/* <option value="">Select One</option> */}
             {options.map(option=>(
