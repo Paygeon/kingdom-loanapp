@@ -34,7 +34,7 @@ const App: React.FC = () => {
         {forms[currentStep]}
       </div>
     </div>
-    <Footer/>
+    <Footer className="footer" />
     </ConfigProvider>
     
   );
