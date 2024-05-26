@@ -1,7 +1,10 @@
 {
   "name": "loanapp",
   "version": "0.1.0",
-  "repository": "https://paygeon.github.io/loanapp",
+  "repository": {
+    "type": "git",
+    "url": "https://paygeon.github.io/loanapp"
+  },
   "dependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.24.1",
     "@testing-library/jest-dom": "^5.17.0",

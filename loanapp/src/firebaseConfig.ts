@@ -10,7 +10,7 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD48fakZA-SZI5Y4g8yvkmFi_lrSbwtMUU",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "paygeonv.firebaseapp.com",
   databaseURL: "https://paygeonv-default-rtdb.firebaseio.com",
   projectId: "paygeonv",
