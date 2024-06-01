@@ -1,0 +1,20 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.my-checkbox{
+  transition: all ease 0.2s;
+}
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+body{
+  background-color: #aeaeae;
+}
+
+@media screen and (max-width:500px) {
+  .container{
+    padding: 0.5rem;
+  }
+}

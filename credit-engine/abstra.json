@@ -1,0 +1,89 @@
+{
+  "workspace": {
+    "id": null,
+    "name": "Untitled Workspace",
+    "theme": null,
+    "logo_url": null,
+    "brand_name": null,
+    "main_color": null,
+    "font_color": null,
+    "font_family": null,
+    "sidebar": []
+  },
+  "visualization": [],
+  "kanban": {
+    "access_control": {
+      "is_public": false,
+      "required_roles": []
+    }
+  },
+  "home": {
+    "access_control": {
+      "is_public": true,
+      "required_roles": []
+    }
+  },
+  "jobs": [],
+  "hooks": [
+    {
+      "id": "67ae1cf6-e451-4876-884c-29a66c02b8d9",
+      "file": "application.py",
+      "path": "application",
+      "title": "application",
+      "enabled": false,
+      "workflow_position": [
+        0.0,
+        0.0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "4f0424fb-94ac-4226-b9cf-42eda4c99f50",
+      "file": "template.py",
+      "path": "template",
+      "title": "template",
+      "enabled": false,
+      "workflow_position": [
+        200.0,
+        0.0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "6c587818-8aab-43a4-8e54-f47b62cac86c",
+      "file": "broker_acceptance.py",
+      "path": "broker-acceptance",
+      "title": "broker_acceptance",
+      "enabled": false,
+      "workflow_position": [
+        600.0,
+        0.0
+      ],
+      "is_initial": true,
+      "transitions": []
+    },
+    {
+      "id": "9e26c053-090c-4f1c-b24d-d2d3b13629af",
+      "file": "reject_application.py",
+      "path": "reject-application",
+      "title": "reject-application",
+      "enabled": false,
+      "workflow_position": [
+        800.0,
+        0.0
+      ],
+      "is_initial": true,
+      "transitions": []
+    }
+  ],
+  "forms": [],
+  "scripts": [],
+  "iterators": [],
+  "conditions": [],
+  "signup_policy": {
+    "email_patterns": []
+  },
+  "version": "7.0"
+}

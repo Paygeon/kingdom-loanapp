@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        html,body{
+            background-color: #eaeaea;
+            margin: 0;
+            padding: 0;
+            color: #3D3D3D;
+        }
+        *{
+            font-family:'Trebuchet MS', sans-serif;
+            margin: 0px;
+        }
+        .title{
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .main-content{
+            max-width: 450px;
+            /* background: #fff; */
+            margin: 16px auto;
+            padding: 14px;
+        }
+        .container{
+            max-width: 450px;
+            margin: auto;
+        }
+        .header img{
+            max-width: 150px;
+        }
+        .header{
+           margin:auto;
+           max-width: 500px;
+        }
+        .main-header{
+            background-color: #fff;
+            padding: 32px auto;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+        }
+        .action-btn button{
+            border: none;
+            font-size: 14px;
+            padding: 8px 24px;
+            border-radius: 8px;
+            min-width: 150px;
+            cursor: pointer;
+            background: none;
+            font-weight: 600;
+            border:1px solid #3D3D3D;
+            color: #3D3D3D;
+        }
+        .action-btn button.approve-btn{
+            background: #3D3D3D;
+            color: #fff;
+            margin-right:8px;
+        }
+        .field{
+            display: flex;
+            gap:16px;
+            align-items: center;
+            /* text-transform: capitalize; */
+            color: #3D3D3D;
+            padding:8px;
+            margin: 8px 0px;
+            border-bottom: 1px solid rgb(61,61,61,0.2);
+        }
+        .field .label{
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-right:8px ;
+        }
+        .field p{
+            flex: 1;
+        }
+        .body{
+            background-color:rgb(61,61,61);
+            border-radius: 8px;
+            color: #fff;
+            padding: 16px;
+            margin: 16px auto;
+            font-weight: 600;
+        }
+        .body p{
+            text-transform: capitalize;
+        }
+        .body p.text{
+            margin: 8px auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header">
+            <img src="https://firebasestorage.googleapis.com/v0/b/paygeonv.appspot.com/o/logo-full.png?alt=media&token=e5f7cbd" alt="Image">
+        </div>
+    </header>
+    <main class="main-content">
+        <p class="title">Hello Lender</p>
+        <p>An application has been sent. Please review the details below to see if it suits your needs.</p>
+        <br>
+        {% for label in application %}
+            <div class="field">
+                <p class="label">{{label}}:</p>
+                <p class="value">{{application[label]}}</p>
+            </div>
+        {% endfor %}
+        <div class="body">
+            <p style="text-align: center;text-transform: uppercase;">Disclaimer !!!</p>
+            <p class="text">If you need to contact this borrower directly, make sure to address yourself as Paygeon if calling by phone or use an authorized Paygeon domain email. Failing to do this will result in churn of the borrower.</p>
+        </div>
+    </main>
+    <footer class="container action-btn">
+        <a href="http://localhost:5173/accept/{{id}}"><button class="approve-btn">Approve</button></a>
+        <a href="http://localhost:5173/reject/{{id}}"><button>Deny</button></a>
+    </footer>
+</body>
+</html>
